@@ -22,6 +22,8 @@ int main(int argc, char** argv)
 		cout << "\t----------------------------------------------------------------"
 				"------\n\n";
 
+cout<<"ADRI MARICONAZO TONTO Y GAY Y TONTO Y GAY Y TONTO"<< endl;
+
 		cout << "\tA. Generar 12 Procesos de forma aleatoria y almacenarlos en la "
 				"Pila.\n";
 		cout << "\tB. Consultar todos los Procesos generados en la Pila.\n";
