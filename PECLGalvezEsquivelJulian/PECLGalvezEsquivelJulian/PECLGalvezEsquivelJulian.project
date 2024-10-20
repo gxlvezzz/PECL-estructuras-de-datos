@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Project Name="PECLGalvezEsquivelJulian" Version="11000" InternalType="Console">
-  <VirtualDirectory Name="Header Files">
-    <File Name="Header Files/Proceso.hpp"/>
-    <File Name="Header Files/Pila.hpp"/>
-    <File Name="Header Files/NodoPila.hpp"/>
-    <File Name="Header Files/NodoLista.hpp"/>
-    <File Name="Header Files/NodoCola.hpp"/>
-    <File Name="Header Files/NodoArbol.hpp"/>
-    <File Name="Header Files/Lista.hpp"/>
-    <File Name="Header Files/Gestor.hpp"/>
-    <File Name="Header Files/Cola.hpp"/>
-    <File Name="Header Files/Arbol.hpp"/>
-  </VirtualDirectory>
   <Description/>
   <Dependencies/>
   <Settings Type="Executable">
@@ -104,17 +92,31 @@
       </Completion>
     </Configuration>
   </Settings>
-  <VirtualDirectory Name="Source Files">
-    <File Name="Proceso.cpp"/>
-    <File Name="Pila.cpp"/>
-    <File Name="NodoPila.cpp"/>
-    <File Name="NodoLista.cpp"/>
-    <File Name="NodoCola.cpp"/>
-    <File Name="NodoArbol.cpp"/>
-    <File Name="Lista.cpp"/>
-    <File Name="Gestor.cpp"/>
-    <File Name="Cola.cpp"/>
-    <File Name="Arbol.cpp"/>
+  <VirtualDirectory Name="src">
+    <VirtualDirectory Name="Source_Files">
+      <File Name="src/Source_Files/Proceso.cpp"/>
+      <File Name="src/Source_Files/NodoPila.cpp"/>
+      <File Name="src/Source_Files/NodoCola.cpp"/>
+      <File Name="src/Source_Files/Cola.cpp"/>
+      <File Name="src/Source_Files/Gestor.cpp"/>
+      <File Name="src/Source_Files/NodoLista.cpp"/>
+      <File Name="src/Source_Files/Lista.cpp"/>
+      <File Name="src/Source_Files/NodoArbol.cpp"/>
+      <File Name="src/Source_Files/Pila.cpp"/>
+      <File Name="src/Source_Files/Arbol.cpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Header Files">
+      <File Name="src/Header Files/Proceso.hpp"/>
+      <File Name="src/Header Files/NodoPila.hpp"/>
+      <File Name="src/Header Files/NodoLista.hpp"/>
+      <File Name="src/Header Files/NodoCola.hpp"/>
+      <File Name="src/Header Files/Lista.hpp"/>
+      <File Name="src/Header Files/Gestor.hpp"/>
+      <File Name="src/Header Files/Cola.hpp"/>
+      <File Name="src/Header Files/NodoArbol.hpp"/>
+      <File Name="src/Header Files/Pila.hpp"/>
+      <File Name="src/Header Files/Arbol.hpp"/>
+    </VirtualDirectory>
     <File Name="main.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
