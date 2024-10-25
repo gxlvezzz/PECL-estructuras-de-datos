@@ -1,4 +1,4 @@
-#include "Proceso.hpp"
+#include "src/Header_Files/Proceso.hpp"
 
 
 Proceso::Proceso() { PID = 1; }
@@ -63,4 +63,4 @@ void Proceso::setPrioridad(int p){
 Proceso::~Proceso()
 {
 }
-Proceso.cpp
+//Proceso.cpp

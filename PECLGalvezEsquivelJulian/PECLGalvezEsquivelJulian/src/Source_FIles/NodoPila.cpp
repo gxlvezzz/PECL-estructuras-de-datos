@@ -1,4 +1,4 @@
-#include "NodoPila.hpp"
+#include "src/Header_Files/NodoPila.hpp"
 
 NodoPila::NodoPila(Proceso v, NodoPila* sig)
 {
@@ -9,4 +9,4 @@ NodoPila::NodoPila(Proceso v, NodoPila* sig)
 NodoPila::~NodoPila()
 {
 }
-NodoPila.cpp
+//NodoPila.cpp
