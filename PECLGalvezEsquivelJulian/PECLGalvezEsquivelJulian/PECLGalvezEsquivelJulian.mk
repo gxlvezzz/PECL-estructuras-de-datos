@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=julia
-Date                   :=25/10/2024
+Date                   :=10/26/2024
 CodeLitePath           :="C:/Program Files/CodeLite"
 MakeDirCommand         :=mkdir
 LinkerName             :=g++
@@ -64,8 +64,8 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Users\julia\Desktop\codelite-amd64-17.0.0\codelite
-Objects0=$(IntermediateDirectory)/src_Source_Files_NodoPila.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Arbol.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Pila.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Cola.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Lista.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Gestor.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_NodoCola.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_NodoLista.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_NodoArbol.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Proceso.cpp$(ObjectSuffix) \
-	$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_NodoCola.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Proceso.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_NodoPila.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Arbol.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Pila.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Cola.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Lista.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_Gestor.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Source_Files_NodoLista.cpp$(ObjectSuffix) \
+	$(IntermediateDirectory)/src_Source_Files_NodoArbol.cpp$(ObjectSuffix) 
 
 
 
@@ -96,6 +96,21 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/julia/Desktop/PECL/PECL-estructuras-de-datos/PECLGalvezEsquivelJulian/PECLGalvezEsquivelJulian/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+
+$(IntermediateDirectory)/src_Source_Files_NodoCola.cpp$(ObjectSuffix): src/Source_Files/NodoCola.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/julia/Desktop/PECL/PECL-estructuras-de-datos/PECLGalvezEsquivelJulian/PECLGalvezEsquivelJulian/src/Source_Files/NodoCola.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_Source_Files_NodoCola.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_Source_Files_NodoCola.cpp$(PreprocessSuffix): src/Source_Files/NodoCola.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_Source_Files_NodoCola.cpp$(PreprocessSuffix) src/Source_Files/NodoCola.cpp
+
+$(IntermediateDirectory)/src_Source_Files_Proceso.cpp$(ObjectSuffix): src/Source_Files/Proceso.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/julia/Desktop/PECL/PECL-estructuras-de-datos/PECLGalvezEsquivelJulian/PECLGalvezEsquivelJulian/src/Source_Files/Proceso.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_Source_Files_Proceso.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_Source_Files_Proceso.cpp$(PreprocessSuffix): src/Source_Files/Proceso.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_Source_Files_Proceso.cpp$(PreprocessSuffix) src/Source_Files/Proceso.cpp
+
 $(IntermediateDirectory)/src_Source_Files_NodoPila.cpp$(ObjectSuffix): src/Source_Files/NodoPila.cpp 
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/julia/Desktop/PECL/PECL-estructuras-de-datos/PECLGalvezEsquivelJulian/PECLGalvezEsquivelJulian/src/Source_Files/NodoPila.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_Source_Files_NodoPila.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_Source_Files_NodoPila.cpp$(PreprocessSuffix): src/Source_Files/NodoPila.cpp
@@ -126,11 +141,6 @@ $(IntermediateDirectory)/src_Source_Files_Gestor.cpp$(ObjectSuffix): src/Source_
 $(IntermediateDirectory)/src_Source_Files_Gestor.cpp$(PreprocessSuffix): src/Source_Files/Gestor.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_Source_Files_Gestor.cpp$(PreprocessSuffix) src/Source_Files/Gestor.cpp
 
-$(IntermediateDirectory)/src_Source_Files_NodoCola.cpp$(ObjectSuffix): src/Source_Files/NodoCola.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/julia/Desktop/PECL/PECL-estructuras-de-datos/PECLGalvezEsquivelJulian/PECLGalvezEsquivelJulian/src/Source_Files/NodoCola.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_Source_Files_NodoCola.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_Source_Files_NodoCola.cpp$(PreprocessSuffix): src/Source_Files/NodoCola.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_Source_Files_NodoCola.cpp$(PreprocessSuffix) src/Source_Files/NodoCola.cpp
-
 $(IntermediateDirectory)/src_Source_Files_NodoLista.cpp$(ObjectSuffix): src/Source_Files/NodoLista.cpp 
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/julia/Desktop/PECL/PECL-estructuras-de-datos/PECLGalvezEsquivelJulian/PECLGalvezEsquivelJulian/src/Source_Files/NodoLista.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_Source_Files_NodoLista.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_Source_Files_NodoLista.cpp$(PreprocessSuffix): src/Source_Files/NodoLista.cpp
@@ -140,16 +150,6 @@ $(IntermediateDirectory)/src_Source_Files_NodoArbol.cpp$(ObjectSuffix): src/Sour
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/julia/Desktop/PECL/PECL-estructuras-de-datos/PECLGalvezEsquivelJulian/PECLGalvezEsquivelJulian/src/Source_Files/NodoArbol.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_Source_Files_NodoArbol.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_Source_Files_NodoArbol.cpp$(PreprocessSuffix): src/Source_Files/NodoArbol.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_Source_Files_NodoArbol.cpp$(PreprocessSuffix) src/Source_Files/NodoArbol.cpp
-
-$(IntermediateDirectory)/src_Source_Files_Proceso.cpp$(ObjectSuffix): src/Source_Files/Proceso.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/julia/Desktop/PECL/PECL-estructuras-de-datos/PECLGalvezEsquivelJulian/PECLGalvezEsquivelJulian/src/Source_Files/Proceso.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_Source_Files_Proceso.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_Source_Files_Proceso.cpp$(PreprocessSuffix): src/Source_Files/Proceso.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_Source_Files_Proceso.cpp$(PreprocessSuffix) src/Source_Files/Proceso.cpp
-
-$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/julia/Desktop/PECL/PECL-estructuras-de-datos/PECLGalvezEsquivelJulian/PECLGalvezEsquivelJulian/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 ##
 ## Clean

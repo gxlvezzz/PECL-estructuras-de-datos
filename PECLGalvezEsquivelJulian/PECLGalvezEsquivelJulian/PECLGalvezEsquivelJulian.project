@@ -106,16 +106,16 @@
       <File Name="src/Source_Files/Arbol.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Header_Files">
-      <File Name="src/Header Files/Proceso.hpp"/>
-      <File Name="src/Header Files/NodoPila.hpp"/>
-      <File Name="src/Header Files/NodoLista.hpp"/>
-      <File Name="src/Header Files/NodoCola.hpp"/>
-      <File Name="src/Header Files/Lista.hpp"/>
-      <File Name="src/Header Files/Gestor.hpp"/>
-      <File Name="src/Header Files/Cola.hpp"/>
-      <File Name="src/Header Files/NodoArbol.hpp"/>
-      <File Name="src/Header Files/Pila.hpp"/>
-      <File Name="src/Header Files/Arbol.hpp"/>
+      <File Name="src/Header_Files/Proceso.hpp"/>
+      <File Name="src/Header_Files/Pila.hpp"/>
+      <File Name="src/Header_Files/NodoPila.hpp"/>
+      <File Name="src/Header_Files/NodoLista.hpp"/>
+      <File Name="src/Header_Files/NodoCola.hpp"/>
+      <File Name="src/Header_Files/NodoArbol.hpp"/>
+      <File Name="src/Header_Files/Lista.hpp"/>
+      <File Name="src/Header_Files/Gestor.hpp"/>
+      <File Name="src/Header_Files/Cola.hpp"/>
+      <File Name="src/Header_Files/Arbol.hpp"/>
     </VirtualDirectory>
     <File Name="main.cpp"/>
   </VirtualDirectory>

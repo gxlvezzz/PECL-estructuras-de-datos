@@ -1,15 +1,17 @@
 #ifndef GESTOR_HPP
 #define GESTOR_HPP
 
-#include "proceso.hpp"
-#include "pila.hpp"
-#include "cola.hpp"
-#include "lista.hpp"
+#include "Proceso.hpp"
+#include "Pila.hpp"
+#include "Cola.hpp"
+#include "Lista.hpp"
 #include <iostream>
 using namespace std;
 
 class Gestor{
     public:
+		void Gestor();
+		void ~Gestor();
         void ProcesosEnPila();
         void ProcesosEnGPU0();
         void ProcesosEnGPU1();
