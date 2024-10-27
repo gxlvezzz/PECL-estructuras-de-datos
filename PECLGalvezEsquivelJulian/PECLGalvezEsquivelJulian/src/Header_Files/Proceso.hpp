@@ -10,7 +10,7 @@ public:
     void mostrar();
     bool getVacio();
     void setVacio(bool v);
-    void crearProceso(int pid);
+    void crearProceso();
     bool getTipo();
     bool getEstado();
     void setEstado(bool e);

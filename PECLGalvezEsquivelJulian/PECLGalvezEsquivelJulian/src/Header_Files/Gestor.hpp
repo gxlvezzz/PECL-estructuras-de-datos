@@ -10,9 +10,9 @@ using namespace std;
 
 class Gestor{
     public:
-		void Gestor();
-		void ~Gestor();
-        void ProcesosEnPila();
+		Gestor();
+		~Gestor();
+        int ProcesosEnPila();
         void ProcesosEnGPU0();
         void ProcesosEnGPU1();
         void ProcesosEnGPU2();

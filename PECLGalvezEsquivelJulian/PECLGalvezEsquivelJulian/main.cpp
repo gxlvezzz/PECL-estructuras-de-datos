@@ -1,18 +1,18 @@
-// #include <Gestor.hpp>
+#include <src/Header_Files/Gestor.hpp>
 #include <iostream>
 using namespace std;
 
 int main(int argc, char** argv)
 {
-	// Gestor gestor;
+	Gestor gestor;
 	char opcion;
 
 	do {
 
 		cout << "\n\t--------------------------------------------------------------"
 				"--------\n";
-		cout << "\tProcesos en la pila -> " << 0 /*gestor.ProcesosEnPila()*/
-			 << "\n\tProcesos en las colas:\n \t\tGPU 0-> " << 0 /*gestor.ProcesosEnGPU0() */ << "\tGPU 1-> "
+		cout << "\tProcesos en la pila -> " << gestor.ProcesosEnPila() << endl;
+		cout << "\n\tProcesos en las colas:\n \t\tGPU 0-> " << 0 /*gestor.ProcesosEnGPU0() */ << "\tGPU 1-> "
 			 << 0 /*gestor.ProcesosEnGPU1() */ << "\tGPU 2-> " << 0 /*gestor.ProcesosEnGPU2() */ << "\tGPU 3-> "
 			 << 0 /*gestor.ProcesosEnGPU3()*/
 			 << " \n\tProcesos en las listas:\n \t\tNormal-> "
@@ -67,7 +67,7 @@ int main(int argc, char** argv)
 		switch(opcion) {
 
 		case 'A':
-			// gestor.genera12Procesos();
+			gestor.genera12Procesos();
 			break;
 		case 'B':
 			// gestor.muestraProcesos();

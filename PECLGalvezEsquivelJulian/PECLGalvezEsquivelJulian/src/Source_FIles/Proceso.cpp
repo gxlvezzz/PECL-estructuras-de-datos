@@ -4,7 +4,8 @@
 Proceso::Proceso() { PID = 1; }
 
 
-void Proceso::crearProceso(int pid){
+void Proceso::crearProceso(){
+	int pid = 300 + rand();
     this->PID = pid;
     int num = rand() % 10;
     this->nombreUsuario = "user" + (0 + num);
