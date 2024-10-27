@@ -5,9 +5,11 @@
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
       <Project Name="PECLGalvezEsquivelJulian" ConfigName="Debug"/>
+      <Project Name="PECLGalvezEsquivelJulian" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
+      <Project Name="PECLGalvezEsquivelJulian" ConfigName="Release"/>
       <Project Name="PECLGalvezEsquivelJulian" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>

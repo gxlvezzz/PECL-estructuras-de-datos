@@ -93,18 +93,6 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <VirtualDirectory Name="Source_Files">
-      <File Name="src/Source_Files/Proceso.cpp"/>
-      <File Name="src/Source_Files/NodoPila.cpp"/>
-      <File Name="src/Source_Files/NodoCola.cpp"/>
-      <File Name="src/Source_Files/Cola.cpp"/>
-      <File Name="src/Source_Files/Gestor.cpp"/>
-      <File Name="src/Source_Files/NodoLista.cpp"/>
-      <File Name="src/Source_Files/Lista.cpp"/>
-      <File Name="src/Source_Files/NodoArbol.cpp"/>
-      <File Name="src/Source_Files/Pila.cpp"/>
-      <File Name="src/Source_Files/Arbol.cpp"/>
-    </VirtualDirectory>
     <VirtualDirectory Name="Header_Files">
       <File Name="src/Header_Files/Proceso.hpp"/>
       <File Name="src/Header_Files/Pila.hpp"/>
@@ -116,6 +104,18 @@
       <File Name="src/Header_Files/Gestor.hpp"/>
       <File Name="src/Header_Files/Cola.hpp"/>
       <File Name="src/Header_Files/Arbol.hpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Source_Files">
+      <File Name="src/Source_Files/Proceso.cpp"/>
+      <File Name="src/Source_Files/Pila.cpp"/>
+      <File Name="src/Source_Files/NodoPila.cpp"/>
+      <File Name="src/Source_Files/NodoLista.cpp"/>
+      <File Name="src/Source_Files/NodoCola.cpp"/>
+      <File Name="src/Source_Files/NodoArbol.cpp"/>
+      <File Name="src/Source_Files/Lista.cpp"/>
+      <File Name="src/Source_Files/Gestor.cpp"/>
+      <File Name="src/Source_Files/Cola.cpp"/>
+      <File Name="src/Source_Files/Arbol.cpp"/>
     </VirtualDirectory>
     <File Name="main.cpp"/>
   </VirtualDirectory>
