@@ -1,6 +1,6 @@
 #ifndef NODOPILA_HPP
 #define NODOPILA_HPP
-#include "Proceso.hpp"
+#include <src/Header_Files/Proceso.hpp>
 
 class NodoPila
 {

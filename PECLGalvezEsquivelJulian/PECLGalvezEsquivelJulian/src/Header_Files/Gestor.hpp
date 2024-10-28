@@ -5,18 +5,17 @@
 #include "Pila.hpp"
 #include "Cola.hpp"
 #include "Lista.hpp"
-#include <iostream>
-using namespace std;
+
 
 class Gestor{
     public:
 		Gestor();
 		~Gestor();
         int ProcesosEnPila();
-        void ProcesosEnGPU0();
-        void ProcesosEnGPU1();
-        void ProcesosEnGPU2();
-        void ProcesosEnGPU3();  
+        int ProcesosEnGPU0();
+        int ProcesosEnGPU1();
+        int ProcesosEnGPU2();
+        int ProcesosEnGPU3();  
         void ProcesosEnListaNormal();
         void ProcesosEnListaTiempoReal();
         void ProcesosEnArbol();
