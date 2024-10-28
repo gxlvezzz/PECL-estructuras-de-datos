@@ -70,10 +70,10 @@ int main(int argc, char** argv)
 			gestor.genera12Procesos();
 			break;
 		case 'B':
-			// gestor.muestraProcesos();
+			gestor.muestraProcesos();
 			break;
 		case 'C':
-			// gestor.borraProcesosPila();
+			gestor.borraProcesosPila();
 			break;
 		case 'D':
 			// gestor.encolarProcesos();

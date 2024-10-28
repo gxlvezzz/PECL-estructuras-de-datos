@@ -36,7 +36,7 @@ void Proceso::mostrar(){
         if(estado){
             e = "ejecucion";
         }
-        cout << ", su estado es " << e << " y su prioridad es: " << prioridad;
+        //cout << ", su estado es " << e << " y su prioridad es: " << prioridad;##
     }
     cout << endl;
 }

@@ -21,6 +21,15 @@ int Gestor::ProcesosEnPila(){
 	int procesos_en_pila = pila.getLongitud();
 	return procesos_en_pila;
 }
+
+void Gestor::muestraProcesos(){
+	pila.mostrar();
+	
+	
+}
+void Gestor::borraProcesosPila(){
+	pila.~Pila();
+}
 Gestor::Gestor(){
 		
 }

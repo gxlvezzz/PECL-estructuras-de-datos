@@ -34,7 +34,6 @@ Proceso Pila::cima(){
 
 void Pila::mostrar(){
     pnodoPila aux = ultimo;
-    cout << "\tEl contenido de la pila es: \n";
     while(aux){
         aux->valor.mostrar();
         aux = aux->siguiente;
@@ -53,6 +52,7 @@ Pila::~Pila()
         aux = ultimo;
         ultimo = ultimo->siguiente;
         delete aux;
+		longitud=0;
     }
 }
 //Pila.cpp
