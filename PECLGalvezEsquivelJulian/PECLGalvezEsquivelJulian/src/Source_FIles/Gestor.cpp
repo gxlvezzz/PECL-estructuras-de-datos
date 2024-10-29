@@ -19,6 +19,7 @@ void Gestor::genera12Procesos(){
 	pila.insertar(proceso);
 		}		
 	}else{
+		cout << "La pila esta llena." << endl;
 		return;
 	}
 }
