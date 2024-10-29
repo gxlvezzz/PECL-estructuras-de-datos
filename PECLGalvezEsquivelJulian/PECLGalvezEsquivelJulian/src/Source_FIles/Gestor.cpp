@@ -61,16 +61,7 @@ void Gestor::encolarProcesos(){
 	pila.extraer();
 	}
 }
-	//if(colaGPU0.getLongitud() < colaGPU1.getLongitud()){
-	//	cola.encolarProcesoNormal(colaGPU0);
-	//}else if(colaGPU1.getLongitud() < colaGPU0.getLongitud()){
-	//	cola.encolarProcesoNormal(colaGPU1);
-	//}else{
-	//	cola.encolarProcesoNormal(colaGPU0);
 		
-	
-
-
 int Gestor::ProcesosEnGPU0(){
 	return colaGPU0.getLongitud();
 }
@@ -88,8 +79,26 @@ int Gestor::ProcesosEnGPU3(){
 }
 
 void Gestor::muestraProcesosGPUs0y1(){
-	//cola.mostrarGPU0y1();
+	cout << "GPU0: " << endl;
+	colaGPU0.mostrar();
+	cout << "GPU1: " << endl;
+	colaGPU1.mostrar();
 }
+
+void Gestor::muestraProcesosGPUs2y3(){
+	cout << "GPU2: " << endl;
+	colaGPU2.mostrar();
+	cout << "GPU3: " << endl;
+	colaGPU3.mostrar();
+}
+
+void Gestor::borraProcesosColas(){
+	colaGPU0.~Cola();
+	colaGPU1.~Cola();
+	colaGPU2.~Cola();
+	colaGPU3.~Cola();
+}
+
 Gestor::Gestor(){
 		
 }

@@ -11,11 +11,9 @@ public:
 	Cola();
 	~Cola();
 	void encolar(Proceso v);
-	void encolarGPU1();
-	void encolarGPU2();
-	void encolarGPU3();
 	void encolarProcesoNormal(Cola& c);
 	int getLongitud();
+	void mostrar();
 	
 private: 
 	

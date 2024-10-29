@@ -7,7 +7,7 @@ class Proceso
 public:
     Proceso();
     ~Proceso();
-    void mostrar();
+    void mostrar(bool mostrartodo);
     bool getVacio();
     void setVacio(bool v);
     void crearProceso();

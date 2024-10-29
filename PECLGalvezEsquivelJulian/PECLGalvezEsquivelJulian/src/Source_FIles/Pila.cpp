@@ -33,13 +33,17 @@ Proceso Pila::cima(){
 }
 
 void Pila::mostrar(){
+	if(longitud==0){
+		cout << "La pila se encuentra vacia." << endl;
+	}else{
     pnodoPila aux = ultimo;
     while(aux){
-        aux->valor.mostrar();
+        aux->valor.mostrar(false);
         aux = aux->siguiente;
     }
     cout << endl;
-}
+}}
+
 
 int Pila::getLongitud(){
     return this->longitud;

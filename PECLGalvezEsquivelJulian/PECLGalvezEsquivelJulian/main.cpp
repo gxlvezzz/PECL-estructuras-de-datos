@@ -82,10 +82,10 @@ int main(int argc, char** argv)
 			gestor.muestraProcesosGPUs0y1();
 			break;
 		case 'F':
-			// gestor.muestraProcesosGPUs2y3();
+			gestor.muestraProcesosGPUs2y3();
 			break;
 		case 'G':
-			// gestor.borraProcesosColas();
+			gestor.borraProcesosColas();
 			break;
 		case 'H':
 			// gestor.enlistarProcesos();

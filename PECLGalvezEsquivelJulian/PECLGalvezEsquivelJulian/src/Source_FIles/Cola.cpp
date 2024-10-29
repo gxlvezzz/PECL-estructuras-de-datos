@@ -10,7 +10,13 @@ Cola::Cola(){
 	ultimo=NULL;
 }
 Cola::~Cola(){
-	
+	pnodoCola aux;
+		while(ultimo){
+			aux = ultimo;
+			ultimo = ultimo->siguiente;
+			delete aux;
+    }
+	longitud=0;	
 }
 	
 	
@@ -37,9 +43,17 @@ int Cola::getLongitud(){
     return this->longitud;
 }
 
-void encolarGPU0(){
-	
-}
+void Cola::mostrar(){
+	if(longitud==0){
+		cout << "Esta cola se encuentra vacia." << endl;
+	}else{
+    pnodoCola aux = ultimo;
+    while(aux){
+        aux->valor.mostrar(true);
+        aux = aux->siguiente;
+    }
+    cout << endl;
+}}
 
 
 

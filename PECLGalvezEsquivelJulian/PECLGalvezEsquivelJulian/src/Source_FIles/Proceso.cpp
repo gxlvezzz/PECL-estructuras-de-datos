@@ -5,7 +5,7 @@ Proceso::Proceso() { PID = 1; }
 
 
 void Proceso::crearProceso(){
-	int pid = 300 + rand();
+	int pid = 300 + (rand() %49);
     this->PID = pid;
     int num = rand() % 10;
     this->nombreUsuario = "user" + (0 + num);
@@ -20,7 +20,7 @@ bool Proceso::getVacio(){
     return this->vacio;
 }
 
-void Proceso::mostrar(){
+void Proceso::mostrar(bool mostrartodo){
     string Tipo;
     if(!tipo){
         Tipo = "normal";
@@ -30,14 +30,15 @@ void Proceso::mostrar(){
     
     cout << "\tEl proceso cuyo PID es "<< PID << " es de tipo " << Tipo;
     
-    
+    if(mostrartodo){
     if(true){
         string e = "parado";
         if(estado){
             e = "ejecucion";
         }
-        //cout << ", su estado es " << e << " y su prioridad es: " << prioridad;##
+        cout << ", su estado es " << e << " y su prioridad es: " << prioridad;
     }
+	}
     cout << endl;
 }
 
