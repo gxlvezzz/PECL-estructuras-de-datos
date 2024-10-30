@@ -99,6 +99,10 @@ void Gestor::borraProcesosColas(){
 	colaGPU2.~Cola();
 	colaGPU3.~Cola();
 }
+void Gestor::muestraProcesoEnTabla() const {
+        std::cout << "Procesos Normales en Ejecución:" << std::endl;
+        listaNormales.mostrarEnTabla();
+    }
 
 Gestor::Gestor(){
 		
