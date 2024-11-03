@@ -62,6 +62,10 @@ void Proceso::setPrioridad(int p){
     this->prioridad = p;
 }
 
+int Proceso::getPID(){
+	return PID;
+}
+
 Proceso::~Proceso()
 {
 }

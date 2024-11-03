@@ -1,6 +1,8 @@
 #include <src/Header_Files/Gestor.hpp>
 #include <iostream>
 #include <src/Header_Files/Proceso.hpp>
+#include <src/Header_Files/Lista.hpp>
+
 using namespace std;
 
 	Pila pila;
@@ -100,42 +102,42 @@ void Gestor::borraProcesosColas(){
 	colaGPU3.~Cola();
 }
 
-void Gestor::muestraProcesosNormal() const {
+void Gestor::muestraProcesosNormal() {
     listaNormales.muestraProcesoEnTabla(); // Llama directamente a la función de Lista
 }
 
-void Gestor::muestraProcesosTiempoReal() const {
+void Gestor::muestraProcesosTiempoReal() {
     listaTiempoReal.muestraProcesoEnTabla(); // Llama directamente a la función de Lista
 }
 	
 void Gestor::buscarProcesos(){
     cout << "\tNormal menor prioridad -> \t\t";
-    Proceso pro = Lnormales.menorPrioridad();
+    Proceso proceso = listaNormales.menorPrioridad();
     
     string estado = "parado";
-    if(pro.getEstado())
+    if(proceso.getEstado())
         estado = "ejecucion";
         
     string tipo = "normal";
-    if(pro.getTipo())
+    if(proceso.getTipo())
         tipo = "tiempo real";
     
-    cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
-    << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
+    cout << "\tEl proceso cuyo PID es "<< proceso.getPID() << " es de tipo " << tipo
+    << ", su estado es " << estado << " y su prioridad es: " << proceso.getPrioridad() << endl;
     
     cout << "\tTiempo real mayor prioridad -> \t\t";
-    pro = LtiempoReal.mayorPrioridad();
+    proceso = LtiempoReal.mayorPrioridad();
     
     estado = "parado";
-    if(pro.getEstado())
+    if(proceso.getEstado())
         estado = "ejecucion";
         
     tipo = "normal";
-    if(pro.getTipo())
+    if(proceso.getTipo())
         tipo = "tiempo real";
     
-    cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
-    << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
+    cout << "\tEl proceso cuyo PID es "<< proceso.getPID() << " es de tipo " << tipo
+    << ", su estado es " << estado << " y su prioridad es: " << proceso.getPrioridad() << endl;
  
 }
 
@@ -150,11 +152,11 @@ void Gestor::buscarProcesoPorNombreUsuario(){
 
 void Gestor::reiniciar() {
         // Vaciamos las estructuras de datos
-        pilaProcesos.vaciar();
-        colaGPU0.vaciar();
-        colaGPU1.vaciar();
-        colaGPU2.vaciar();
-        colaGPU3.vaciar();
+        pila.~Pila();
+        colaGPU0.~Cola();
+		colaGPU1.~Cola();
+		colaGPU2.~Cola();
+		colaGPU3.~Cola();
 		
         listaNormales.vaciar();
         listaTiempoReal.vaciar();

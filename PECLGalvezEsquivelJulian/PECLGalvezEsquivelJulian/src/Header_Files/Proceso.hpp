@@ -16,7 +16,7 @@ public:
     void setEstado(bool e);
     int getPrioridad();
     void setPrioridad(int p);
-    void vaciar();
+    int getPID();
 	
 private:
     bool tipo;

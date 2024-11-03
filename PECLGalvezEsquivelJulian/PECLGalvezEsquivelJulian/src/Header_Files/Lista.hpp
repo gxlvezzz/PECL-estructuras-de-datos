@@ -2,8 +2,8 @@
 #define LISTA_HPP
 
 #include <iostream>
-#include <iomanip> // Para std::setw y std::left
-#include "NodoLista.hpp" // Archivo de cabecera para NodoLista y Proceso
+#include <src/Header_Files/NodoLista.hpp> 
+using namespace std;
 
 class Lista {
 private:
@@ -12,25 +12,28 @@ private:
 public:
     // Constructor
     Lista();
+	~Lista();
 
     // Método para insertar un proceso en la lista
     void insertar(Proceso v);
 
     // Método para mostrar la lista de procesos normales en formato tabla
-    void muestraProcesosNormal() const;
+    void muestraProcesosNormal() ;
 	
 	// Método para mostrar la lista de procesos en tiempo real en formato tabla
-    void muestraProcesosTiempoReal() const;
+    void muestraProcesosTiempoReal() ;
 	
 	//Método para buscar los procesos del usuario
-	void buscarProcesosUsuario() const;
+	void buscarProcesosUsuario(string user) ;
 	
 	// Método para vaciar la lista al reiniciar
-    void vaciar() const;
+    void vaciar() ;
 
     // Otros métodos (buscar, eliminar, etc.) se pueden declarar aquí
 	
-	
+private:
+	int longitud;
+	pnodoLista ultimo;
 };
 
 #endif // LISTA_H

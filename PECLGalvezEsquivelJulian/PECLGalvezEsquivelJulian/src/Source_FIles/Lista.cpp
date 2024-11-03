@@ -1,4 +1,7 @@
 #include "src/Header_Files/Lista.hpp"
+#include "src/Header_Files/Proceso.hpp"
+#include <iostream>
+using namespace std;
 
 // Constructor
 Lista::Lista() {
@@ -22,62 +25,62 @@ void Lista::vaciar() {
 }
 
 // Método para mostrar los procesos normales en formato tabla
-void Lista::muestraProcesosNormal() const {
+void Lista::muestraProcesosNormal()  {
     if (cabeza == nullptr) {
-        std::cout << "No hay procesos en la lista." << std::endl;
+        cout << "No hay procesos en la lista." << endl;
         return;
     }
 
-    std::cout << std::left << std::setw(10) << "PID" 
-              << std::setw(15) << "Usuario" 
-              << std::setw(15) << "Tipo" 
-              << std::setw(15) << "Estado" 
-              << std::setw(10) << "Prioridad" 
-              << std::endl;
+    cout << left << setw(10) << "PID" 
+              << setw(15) << "Usuario" 
+              << setw(15) << "Tipo" 
+              << setw(15) << "Estado" 
+              << setw(10) << "Prioridad" 
+              << endl;
 
-    std::cout << std::string(65, '-') << std::endl;
+    cout << string(65, '-') << endl;
 
     pnodoLista actual = cabeza;
     while (actual != nullptr) {
-        const Proceso& proceso = actual->valor; // Acceder al proceso del nodo
+         Proceso& proceso = actual->valor; // Acceder al proceso del nodo
         if (!proceso.esTiempoReal()) { // Solo muestra si es un proceso normal
-            std::cout << std::left << std::setw(10) << proceso.getPID()
-                      << std::setw(15) << proceso.getUsuario()
-                      << std::setw(15) << "Normal"
-                      << std::setw(15) << (proceso.estaEnEjecucion() ? "En Ejecución" : "Parado")
-                      << std::setw(10) << proceso.getPrioridad()
-                      << std::endl;
+            cout << left << setw(10) << proceso.getPID()
+                      << setw(15) << proceso.getUsuario()
+                      << setw(15) << "Normal"
+                      << setw(15) << (proceso.estaEnEjecucion() ? "En Ejecución" : "Parado")
+                      << setw(10) << proceso.getPrioridad()
+                      << endl;
         }
         actual = actual->siguiente;
     }
 }
 
 // Método para mostrar los procesos de tiempo real en formato tabla
-void Lista::muestraProcesosTiempoReal() const {
+void Lista::muestraProcesosTiempoReal()  {
     if (cabeza == nullptr) {
-        std::cout << "No hay procesos en la lista de tiempo real." << std::endl;
+        cout << "No hay procesos en la lista de tiempo real." << endl;
         return;
     }
 
-    std::cout << std::left << std::setw(10) << "PID" 
-              << std::setw(15) << "Usuario" 
-              << std::setw(15) << "Tipo" 
-              << std::setw(15) << "Estado" 
-              << std::setw(10) << "Prioridad" 
-              << std::endl;
+    cout << left << setw(10) << "PID" 
+              << setw(15) << "Usuario" 
+              << setw(15) << "Tipo" 
+              << setw(15) << "Estado" 
+              << setw(10) << "Prioridad" 
+              << endl;
 
-    std::cout << std::string(65, '-') << std::endl;
+    cout << string(65, '-') << endl;
 
     pnodoLista actual = cabeza;
     while (actual != nullptr) {
-        const Proceso& proceso = actual->valor; // Acceder al proceso del nodo
+         Proceso& proceso = actual->valor; // Acceder al proceso del nodo
         if (proceso.esTiempoReal()) { // Solo muestra si es tiempo real
-            std::cout << std::left << std::setw(10) << proceso.getPID()
-                      << std::setw(15) << proceso.getUsuario()
-                      << std::setw(15) << "Tiempo Real"
-                      << std::setw(15) << (proceso.estaEnEjecucion() ? "En Ejecución" : "Parado")
-                      << std::setw(10) << proceso.getPrioridad()
-                      << std::endl;
+            cout << left << setw(10) << proceso.getPID()
+                      << setw(15) << proceso.getUsuario()
+                      << setw(15) << "Tiempo Real"
+                      << setw(15) << (proceso.estaEnEjecucion() ? "En Ejecución" : "Parado")
+                      << setw(10) << proceso.getPrioridad()
+                      << endl;
         }
         actual = actual->siguiente;
     }
@@ -131,5 +134,11 @@ void Lista::buscarProcesosUsuario(string user){
 
 // Destructor
 Lista::~Lista() {
-    vaciar(); // Llama a vaciar para liberar memoria
+    pnodoLista aux;
+		while(ultimo){
+			aux = ultimo;
+			ultimo = ultimo->siguiente;
+			delete aux;
+    }
+	longitud=0;
 }
