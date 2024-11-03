@@ -14,6 +14,7 @@ public:
 	void encolarProcesoNormal(Cola& c);
 	int getLongitud();
 	void mostrar();
+	void vaciar();
 	
 private: 
 	

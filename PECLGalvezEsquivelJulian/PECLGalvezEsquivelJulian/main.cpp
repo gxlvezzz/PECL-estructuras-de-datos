@@ -91,16 +91,16 @@ int main(int argc, char** argv)
 			// gestor.enlistarProcesos();
 			break;
 		case 'I':
-			// gestor.muestraProcesosNormal();
+			 gestor.muestraProcesosNormal();
 			break;
 		case 'J':
-			// gestor.muestraProcesosTiempoReal();
+			 gestor.muestraProcesosTiempoReal();
 			break;
 		case 'K':
-			// gestor.buscarProcesos();
+			 gestor.buscarProcesos();
 			break;
 		case 'L':
-			// gestor.buscarProcesoPorNombreUsuario();
+			 gestor.buscarProcesoPorNombreUsuario();
 			break;
 		case 'M':
 			// gestor.eliminarProcesoPorPID();
@@ -109,7 +109,7 @@ int main(int argc, char** argv)
 			// gestor.cambiarPrioridadProcesoPorPID();
 			break;
 		case 'O':
-			// gestor.reiniciar();
+			 gestor.reiniciar();
 			break;
 		case 'P':
 			//...;

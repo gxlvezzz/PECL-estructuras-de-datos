@@ -99,10 +99,72 @@ void Gestor::borraProcesosColas(){
 	colaGPU2.~Cola();
 	colaGPU3.~Cola();
 }
-void Gestor::muestraProcesoEnTabla() const {
-        std::cout << "Procesos Normales en Ejecución:" << std::endl;
-        listaNormales.mostrarEnTabla();
+
+void Gestor::muestraProcesosNormal() const {
+    listaNormales.muestraProcesoEnTabla(); // Llama directamente a la función de Lista
+}
+
+void Gestor::muestraProcesosTiempoReal() const {
+    listaTiempoReal.muestraProcesoEnTabla(); // Llama directamente a la función de Lista
+}
+	
+void Gestor::buscarProcesos(){
+    cout << "\tNormal menor prioridad -> \t\t";
+    Proceso pro = Lnormales.menorPrioridad();
+    
+    string estado = "parado";
+    if(pro.getEstado())
+        estado = "ejecucion";
+        
+    string tipo = "normal";
+    if(pro.getTipo())
+        tipo = "tiempo real";
+    
+    cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
+    << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
+    
+    cout << "\tTiempo real mayor prioridad -> \t\t";
+    pro = LtiempoReal.mayorPrioridad();
+    
+    estado = "parado";
+    if(pro.getEstado())
+        estado = "ejecucion";
+        
+    tipo = "normal";
+    if(pro.getTipo())
+        tipo = "tiempo real";
+    
+    cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
+    << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
+ 
+}
+
+void Gestor::buscarProcesoPorNombreUsuario(){
+    string o;
+    cout << "\tIntroduce un nombre de usuario: ";
+    cin >> o;
+    cout << "\tPID\tUsuario\tTipo\tEstado\t\tPrioridad" << endl;
+    Lnormales.buscarProcesosUsuario(o);
+    LtiempoReal.buscarProcesosUsuario(o);
+}
+
+void Gestor::reiniciar() {
+        // Vaciamos las estructuras de datos
+        pilaProcesos.vaciar();
+        colaGPU0.vaciar();
+        colaGPU1.vaciar();
+        colaGPU2.vaciar();
+        colaGPU3.vaciar();
+		
+        listaNormales.vaciar();
+        listaTiempoReal.vaciar();
+
+        // Opcional: Reiniciar contadores o variables adicionales
+
+        std::cout << "El programa ha sido reiniciado al estado inicial." << std::endl;
     }
+	
+
 
 Gestor::Gestor(){
 		

@@ -16,6 +16,7 @@ public:
 private:
     pnodoPila ultimo;
     int longitud;
+	void vaciar();
 };
 
 #endif // PILA_HPP
