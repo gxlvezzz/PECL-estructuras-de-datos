@@ -12,7 +12,8 @@ using namespace std;
 	Cola colaGPU1;
 	Cola colaGPU2;
 	Cola colaGPU3;
-
+	Lista listaNormal;
+	Lista listaTiempoReal;
 	
 void Gestor::genera12Procesos(){
 	if(pila.getLongitud()<48){
@@ -53,7 +54,7 @@ void Gestor::encolarProcesos(){
 	
 	}else{
 		
-		if(colaGPU2.getLongitud() < colaGPU2.getLongitud()){
+		if(colaGPU2.getLongitud() < colaGPU3.getLongitud()){
 		colaGPU2.encolar(proceso);
 	}else if(colaGPU3.getLongitud() < colaGPU2.getLongitud()){
 		colaGPU3.encolar(proceso);	
@@ -158,14 +159,40 @@ void Gestor::reiniciar() {
 		colaGPU2.~Cola();
 		colaGPU3.~Cola();
 		
-        listaNormales.vaciar();
+        listaNormal.vaciar();
         listaTiempoReal.vaciar();
 
         // Opcional: Reiniciar contadores o variables adicionales
 
-        std::cout << "El programa ha sido reiniciado al estado inicial." << std::endl;
+        cout << "El programa ha sido reiniciado al estado inicial." << endl;
     }
 	
+void Gestor::enlistarProcesos(){
+	while (cola.getLongitud()!=0){
+	proceso = cola.cima();
+	if(proceso.getTipo()==false){
+		
+		listaNormal.enlistar(proceso);		
+	
+	}else{
+		
+		listaTiempoReal.enlistar(proceso);
+	}
+	cola.extraer();
+	}
+	colaGPU0.~Cola();
+	colaGPU1.~Cola();
+	colaGPU2.~Cola();
+	colaGPU3.~Cola();
+}
+	
+int Gestor::ProcesosEnListaNormal(){
+	return listaNormal.getLongitud();
+}
+
+int Gestor::ProcesosEnListaTiempoReal(){
+	return listaTiempoReal.getLongitud();
+}
 
 
 Gestor::Gestor(){

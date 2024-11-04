@@ -5,24 +5,10 @@ using namespace std;
 
 // Constructor
 Lista::Lista() {
-    cabeza = nullptr;
+    longitud=0;
+	ultimo=NULL;
 }
 
-// Método para insertar un proceso
-void Lista::insertar(Proceso v) {
-    pnodoLista nuevo = new NodoLista(v, cabeza);
-    cabeza = nuevo;
-}
-
-// Método para vaciar la lista
-void Lista::vaciar() {
-    pnodoLista aux;
-    while (cabeza) {
-        aux = cabeza;
-        cabeza = cabeza->siguiente;
-        delete aux;
-    }
-}
 
 // Método para mostrar los procesos normales en formato tabla
 void Lista::muestraProcesosNormal()  {
@@ -130,6 +116,27 @@ void Lista::buscarProcesosUsuario(string user){
         }
         aux = aux->siguiente;
     }
+}
+
+void Lista::enlistar(Proceso v){
+	pnodoLista nuevo;
+    nuevo = new NodoLista(v,ultimo);
+    ultimo = nuevo;
+    longitud++;	
+}
+
+void Lista::extraer(){
+    pnodoLista nodo;
+    if(!ultimo)
+        return;
+    nodo = ultimo;
+    ultimo = nodo->siguiente;
+    longitud--;
+    delete nodo;
+}
+
+int Lista::getLongitud(){
+    return this->longitud;
 }
 
 // Destructor

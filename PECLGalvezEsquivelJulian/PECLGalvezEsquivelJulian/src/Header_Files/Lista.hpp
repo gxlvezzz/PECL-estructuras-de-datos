@@ -13,10 +13,11 @@ public:
     // Constructor
     Lista();
 	~Lista();
+	
+	
 
     // Método para insertar un proceso en la lista
-    void insertar(Proceso v);
-
+	void enlistar(Proceso v);
     // Método para mostrar la lista de procesos normales en formato tabla
     void muestraProcesosNormal() ;
 	
@@ -27,9 +28,8 @@ public:
 	void buscarProcesosUsuario(string user) ;
 	
 	// Método para vaciar la lista al reiniciar
-    void vaciar() ;
-
-    // Otros métodos (buscar, eliminar, etc.) se pueden declarar aquí
+    void extraer();
+	int getLongitud();
 	
 private:
 	int longitud;

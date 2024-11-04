@@ -15,6 +15,8 @@ public:
 	int getLongitud();
 	void mostrar();
 	void vaciar();
+	void extraer();
+	Proceso cima();
 	
 private: 
 	

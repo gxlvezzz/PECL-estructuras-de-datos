@@ -24,11 +24,10 @@ void Cola::encolar(Proceso v){
 	pnodoCola nuevo;
     nuevo = new NodoCola(v,ultimo);
     ultimo = nuevo;
-    longitud++;
-	
+    longitud++;	
 }
 
-void Cola::encolarProcesoNormal(Cola& c){
+/*void Cola::encolarProcesoNormal(Cola& c){
     pnodoCola aux = ultimo;
     while(aux){
         if(!aux->valor.getTipo()){
@@ -37,7 +36,7 @@ void Cola::encolarProcesoNormal(Cola& c){
         aux = aux->siguiente;
     }
     cout << endl;
-}
+}*/
 
 int Cola::getLongitud(){
     return this->longitud;
@@ -54,6 +53,25 @@ void Cola::mostrar(){
     }
     cout << endl;
 }}
+
+void Cola::extraer(){
+    pnodoCola nodo;
+    if(!ultimo)
+        return;
+    nodo = ultimo;
+    ultimo = nodo->siguiente;
+    longitud--;
+    delete nodo;
+}
+
+Proceso Cola::cima(){
+    if(!ultimo){
+        Proceso pro;
+        pro.setVacio(true);
+        return ultimo->valor;
+    }
+    return ultimo->valor;
+}
 
 
 

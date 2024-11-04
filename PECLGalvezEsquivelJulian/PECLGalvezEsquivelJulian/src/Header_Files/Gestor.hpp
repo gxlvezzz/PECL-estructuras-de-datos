@@ -16,8 +16,8 @@ class Gestor{
         int ProcesosEnGPU1();
         int ProcesosEnGPU2();
         int ProcesosEnGPU3();  
-        void ProcesosEnListaNormal();
-        void ProcesosEnListaTiempoReal();
+        int ProcesosEnListaNormal();
+        int ProcesosEnListaTiempoReal();
         void ProcesosEnArbol();
         void genera12Procesos();
         void muestraProcesos();
