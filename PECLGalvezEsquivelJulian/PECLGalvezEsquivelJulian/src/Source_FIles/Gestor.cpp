@@ -14,6 +14,7 @@ using namespace std;
 	Cola colaGPU3;
 	Lista listaNormal;
 	Lista listaTiempoReal;
+
 	
 void Gestor::genera12Procesos(){
 	if(pila.getLongitud()<48){
@@ -104,16 +105,16 @@ void Gestor::borraProcesosColas(){
 }
 
 void Gestor::muestraProcesosNormal() {
-    listaNormales.muestraProcesoEnTabla(); // Llama directamente a la función de Lista
+    listaNormal.muestraProcesosNormal(); // Llama directamente a la función de Lista
 }
 
 void Gestor::muestraProcesosTiempoReal() {
-    listaTiempoReal.muestraProcesoEnTabla(); // Llama directamente a la función de Lista
+    listaTiempoReal.muestraProcesosTiempoReal(); // Llama directamente a la función de Lista
 }
 	
 void Gestor::buscarProcesos(){
     cout << "\tNormal menor prioridad -> \t\t";
-    Proceso proceso = listaNormales.menorPrioridad();
+    Proceso proceso = listaNormal.menorPrioridad();
     
     string estado = "parado";
     if(proceso.getEstado())
@@ -127,7 +128,7 @@ void Gestor::buscarProcesos(){
     << ", su estado es " << estado << " y su prioridad es: " << proceso.getPrioridad() << endl;
     
     cout << "\tTiempo real mayor prioridad -> \t\t";
-    proceso = LtiempoReal.mayorPrioridad();
+    proceso = listaTiempoReal.mayorPrioridad();
     
     estado = "parado";
     if(proceso.getEstado())
@@ -147,8 +148,57 @@ void Gestor::buscarProcesoPorNombreUsuario(){
     cout << "\tIntroduce un nombre de usuario: ";
     cin >> o;
     cout << "\tPID\tUsuario\tTipo\tEstado\t\tPrioridad" << endl;
-    Lnormales.buscarProcesosUsuario(o);
-    LtiempoReal.buscarProcesosUsuario(o);
+    listaNormal.buscarProcesosUsuario(o);
+    listaTiempoReal.buscarProcesosUsuario(o);
+}
+
+void Gestor::eliminarProcesoPorPID(int pid) {
+    bool encontrado = false;
+
+    // Buscar el proceso en la lista normal
+    Proceso proceso = listaNormal.buscarYEliminarProceso(pid);
+    if (proceso.getPID() != -1) { // PID -1 indica que el proceso fue encontrado
+        encontrado = true;
+    } else {
+        // Si no se encuentra en listaNormal, buscar en listaTiempoReal
+        proceso = listaTiempoReal.buscarYEliminarProceso(pid);
+        if (proceso.getPID() != -1) {
+            encontrado = true;
+        }
+    }
+
+    if (encontrado) {
+        // Cambiar el estado del proceso a "parado"
+        proceso.setEstado(false);
+
+        // Volver a insertar el proceso en la pila
+        pila.insertar(proceso);
+
+        cout << "El proceso con PID " << pid << " ha sido detenido y reinsertado en la pila." << endl;
+    } else {
+        cout << "No se encontró ningún proceso con el PID " << pid << "." << endl;
+    }
+}
+
+void Gestor::cambiarPrioridadProcesoPorPID(int pid) {
+    Proceso* proceso = listaNormal.buscarProcesoPorPID(pid);
+    
+    if (proceso == nullptr) {
+        // Si no se encuentra en listaNormal, buscar en listaTiempoReal
+        proceso = listaTiempoReal.buscarProcesoPorPID(pid);
+    }
+    
+    if (proceso != nullptr) {
+        int nuevaPrioridad;
+        cout << "Introduce la nueva prioridad para el proceso con PID " << pid << ": ";
+        cin >> nuevaPrioridad;
+        
+        proceso->setPrioridad(nuevaPrioridad);
+        
+        cout << "La prioridad del proceso con PID " << pid << " ha sido actualizada a " << nuevaPrioridad << "." << endl;
+    } else {
+        cout << "No se encontró ningún proceso con el PID " << pid << "." << endl;
+    }
 }
 
 void Gestor::reiniciar() {
@@ -159,8 +209,8 @@ void Gestor::reiniciar() {
 		colaGPU2.~Cola();
 		colaGPU3.~Cola();
 		
-        listaNormal.vaciar();
-        listaTiempoReal.vaciar();
+        listaNormal.~Lista();
+        listaTiempoReal.~Lista();
 
         // Opcional: Reiniciar contadores o variables adicionales
 

@@ -29,6 +29,17 @@ public:
 	
 	// Método para vaciar la lista al reiniciar
     void extraer();
+	
+	//Método para ordenar por menor prioridad
+	void menorPrioridad();
+	
+	//Método para ordenar por mayor prioridad
+	void mayorPrioridad();
+	//Metodo para encontrar y eliminar un proceso 
+	void buscarYEliminarProceso(int pid);
+	//Metodo para encontrar un proceso por PID
+	void buscarProcesoPorPID(int pid);
+	
 	int getLongitud();
 	
 private:
