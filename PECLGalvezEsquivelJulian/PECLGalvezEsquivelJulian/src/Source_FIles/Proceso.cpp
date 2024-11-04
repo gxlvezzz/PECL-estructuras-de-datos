@@ -8,7 +8,7 @@ void Proceso::crearProceso(){
 	int pid = 300 + (rand() %49);
     this->PID = pid;
     int num = rand() % 10;
-    this->nombreUsuario = "user" + (0 + num);
+    string usuario = "user" + (0 + num);
     this->tipo = (rand() % 2);
 }
 
@@ -44,6 +44,10 @@ void Proceso::mostrar(bool mostrartodo){
 
 bool Proceso::getTipo(){
     return this->tipo;
+}
+
+string Proceso::getUsuario(){
+    return this->usuario;
 }
 
 bool Proceso::getEstado(){

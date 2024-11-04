@@ -72,7 +72,7 @@ Proceso Cola::cima(){
     }
     return ultimo->valor;
 }
-
+	
 
 
 

@@ -18,11 +18,9 @@ public:
 
     // Método para insertar un proceso en la lista
 	void enlistar(Proceso v);
-    // Método para mostrar la lista de procesos normales en formato tabla
-    void muestraProcesosNormal() ;
+    // Método para mostrar la lista de procesos en formato tabla
+    void muestraProcesos() ;
 	
-	// Método para mostrar la lista de procesos en tiempo real en formato tabla
-    void muestraProcesosTiempoReal() ;
 	
 	//Método para buscar los procesos del usuario
 	void buscarProcesosUsuario(string user) ;
@@ -45,6 +43,7 @@ public:
 private:
 	int longitud;
 	pnodoLista ultimo;
+	int primero;
 };
 
 #endif // LISTA_H

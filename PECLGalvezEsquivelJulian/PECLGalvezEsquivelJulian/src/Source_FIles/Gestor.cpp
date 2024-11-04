@@ -105,20 +105,16 @@ void Gestor::borraProcesosColas(){
 }
 
 void Gestor::muestraProcesosNormal() {
-<<<<<<< HEAD
-    listaNormal.muestraProcesoEnTabla(); // Llama directamente a la función de Lista
-=======
-    listaNormal.muestraProcesosNormal(); // Llama directamente a la función de Lista
->>>>>>> 7c12a9317db4b546d9a6782c798ec19507f9c1ad
+    listaNormal.muestraProcesos(); // Llama directamente a la función de Lista
 }
 
 void Gestor::muestraProcesosTiempoReal() {
-    listaTiempoReal.muestraProcesosTiempoReal(); // Llama directamente a la función de Lista
+    listaTiempoReal.muestraProcesos(); // Llama directamente a la función de Lista
 }
 	
 void Gestor::buscarProcesos(){
     cout << "\tNormal menor prioridad -> \t\t";
-    Proceso proceso = listaNormal.menorPrioridad();
+	proceso = listaNormal.menorPrioridad();
     
     string estado = "parado";
     if(proceso.getEstado())
@@ -154,15 +150,13 @@ void Gestor::buscarProcesoPorNombreUsuario(){
     cout << "\tPID\tUsuario\tTipo\tEstado\t\tPrioridad" << endl;
     listaNormal.buscarProcesosUsuario(o);
     listaTiempoReal.buscarProcesosUsuario(o);
-<<<<<<< HEAD
-=======
 }
 
 void Gestor::eliminarProcesoPorPID(int pid) {
     bool encontrado = false;
 
     // Buscar el proceso en la lista normal
-    Proceso proceso = listaNormal.buscarYEliminarProceso(pid);
+    proceso = listaNormal.buscarYEliminarProceso(pid);
     if (proceso.getPID() != -1) { // PID -1 indica que el proceso fue encontrado
         encontrado = true;
     } else {
@@ -205,7 +199,6 @@ void Gestor::cambiarPrioridadProcesoPorPID(int pid) {
     } else {
         cout << "No se encontró ningún proceso con el PID " << pid << "." << endl;
     }
->>>>>>> 7c12a9317db4b546d9a6782c798ec19507f9c1ad
 }
 
 void Gestor::reiniciar() {

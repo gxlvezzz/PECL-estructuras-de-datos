@@ -12,6 +12,7 @@ public:
     void setVacio(bool v);
     void crearProceso();
     bool getTipo();
+	string getUsuario();
     bool getEstado();
     void setEstado(bool e);
     int getPrioridad();
@@ -21,7 +22,7 @@ public:
 private:
     bool tipo;
     int PID;
-    string nombreUsuario;
+    string usuario;
     bool estado;
     int prioridad;
     bool vacio;
