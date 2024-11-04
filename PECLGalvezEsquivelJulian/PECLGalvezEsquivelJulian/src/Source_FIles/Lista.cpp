@@ -12,63 +12,60 @@ Lista::Lista() {
 
 // Método para mostrar los procesos normales en formato tabla
 void Lista::muestraProcesosNormal()  {
-    if (cabeza == nullptr) {
-        cout << "No hay procesos en la lista." << endl;
+   if (longitud < 1) {
+        cout << "No hay procesos en la lista normal." << endl;
         return;
     }
 
-    cout << left << setw(10) << "PID" 
-              << setw(15) << "Usuario" 
-              << setw(15) << "Tipo" 
-              << setw(15) << "Estado" 
-              << setw(10) << "Prioridad" 
-              << endl;
+    cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
+    cout << "---------------------------------------------------" << endl; // Línea de separación
 
-    cout << string(65, '-') << endl;
-
-    pnodoLista actual = cabeza;
+    pnodoLista actual = primero;
     while (actual != nullptr) {
-         Proceso& proceso = actual->valor; // Acceder al proceso del nodo
-        if (!proceso.esTiempoReal()) { // Solo muestra si es un proceso normal
-            cout << left << setw(10) << proceso.getPID()
-                      << setw(15) << proceso.getUsuario()
-                      << setw(15) << "Normal"
-                      << setw(15) << (proceso.estaEnEjecucion() ? "En Ejecución" : "Parado")
-                      << setw(10) << proceso.getPrioridad()
-                      << endl;
-        }
-        actual = actual->siguiente;
+        Proceso& proceso = actual->valor; // Acceder al proceso del nodo
+
+        // Construir la línea de salida sin usar setw
+        string tipo = proceso.esTiempoReal() ? "Tiempo Real" : "Normal";
+        string estado = proceso.estaEnEjecucion() ? "En Ejecución" : "Parado";
+
+        cout << proceso.getPID() << "\t" 
+             << proceso.getUsuario() << "\t" 
+             << tipo << "\t" 
+             << estado << "\t" 
+             << proceso.getPrioridad() << endl;
+
+        actual = actual->siguiente; // Mover al siguiente nodo
     }
 }
 
 // Método para mostrar los procesos de tiempo real en formato tabla
 void Lista::muestraProcesosTiempoReal()  {
-    if (cabeza == nullptr) {
+    if (longitud < 1) {
         cout << "No hay procesos en la lista de tiempo real." << endl;
         return;
     }
 
-    cout << left << setw(10) << "PID" 
-              << setw(15) << "Usuario" 
-              << setw(15) << "Tipo" 
-              << setw(15) << "Estado" 
-              << setw(10) << "Prioridad" 
-              << endl;
+    cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
+    cout << "---------------------------------------------------" << endl; // Línea de separación
 
-    cout << string(65, '-') << endl;
-
-    pnodoLista actual = cabeza;
+    pnodoLista actual = primero;
     while (actual != nullptr) {
-         Proceso& proceso = actual->valor; // Acceder al proceso del nodo
-        if (proceso.esTiempoReal()) { // Solo muestra si es tiempo real
-            cout << left << setw(10) << proceso.getPID()
-                      << setw(15) << proceso.getUsuario()
-                      << setw(15) << "Tiempo Real"
-                      << setw(15) << (proceso.estaEnEjecucion() ? "En Ejecución" : "Parado")
-                      << setw(10) << proceso.getPrioridad()
-                      << endl;
+        Proceso& proceso = actual->valor; // Acceder al proceso del nodo
+
+        // Verificar si el proceso es de tipo tiempo real
+        if (proceso.esTiempoReal()) {
+            // Construir la línea de salida sin usar setw
+            string tipo = "Tiempo Real";
+            string estado = proceso.estaEnEjecucion() ? "En Ejecución" : "Parado";
+
+            cout << proceso.getPID() << "\t" 
+                 << proceso.getUsuario() << "\t" 
+                 << tipo << "\t" 
+                 << estado << "\t" 
+                 << proceso.getPrioridad() << endl;
         }
-        actual = actual->siguiente;
+
+        actual = actual->siguiente; // Mover al siguiente nodo
     }
 }
 
