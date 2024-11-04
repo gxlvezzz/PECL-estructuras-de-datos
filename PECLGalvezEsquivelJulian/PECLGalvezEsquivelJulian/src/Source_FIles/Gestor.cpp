@@ -104,7 +104,7 @@ void Gestor::borraProcesosColas(){
 }
 
 void Gestor::muestraProcesosNormal() {
-    listaNormales.muestraProcesoEnTabla(); // Llama directamente a la función de Lista
+    listaNormal.muestraProcesoEnTabla(); // Llama directamente a la función de Lista
 }
 
 void Gestor::muestraProcesosTiempoReal() {
@@ -113,7 +113,7 @@ void Gestor::muestraProcesosTiempoReal() {
 	
 void Gestor::buscarProcesos(){
     cout << "\tNormal menor prioridad -> \t\t";
-    Proceso proceso = listaNormales.menorPrioridad();
+    Proceso proceso = listaNormal.menorPrioridad();
     
     string estado = "parado";
     if(proceso.getEstado())
@@ -127,7 +127,7 @@ void Gestor::buscarProcesos(){
     << ", su estado es " << estado << " y su prioridad es: " << proceso.getPrioridad() << endl;
     
     cout << "\tTiempo real mayor prioridad -> \t\t";
-    proceso = LtiempoReal.mayorPrioridad();
+    proceso = listaTiempoReal.mayorPrioridad();
     
     estado = "parado";
     if(proceso.getEstado())
@@ -147,8 +147,8 @@ void Gestor::buscarProcesoPorNombreUsuario(){
     cout << "\tIntroduce un nombre de usuario: ";
     cin >> o;
     cout << "\tPID\tUsuario\tTipo\tEstado\t\tPrioridad" << endl;
-    Lnormales.buscarProcesosUsuario(o);
-    LtiempoReal.buscarProcesosUsuario(o);
+    listaNormal.buscarProcesosUsuario(o);
+    listaTiempoReal.buscarProcesosUsuario(o);
 }
 
 void Gestor::reiniciar() {
