@@ -135,9 +135,51 @@ void Lista::extraer(){
     delete nodo;
 }
 
+void Lista::buscarYEliminarProceso(int pid) {
+    if (longitud < 1) return Proceso(-1);  // Proceso con PID -1 indica que no se encontró
+
+    pnodoLista actual = primero;
+    pnodoLista anterior = nullptr;
+
+    while (actual != nullptr) {
+        if (actual->valor.getPID() == pid) {
+            // Proceso encontrado; eliminarlo de la lista
+            Proceso proceso = actual->valor;
+            if (anterior == nullptr) {
+                primero = actual->siguiente;  // Eliminar el primer nodo
+            } else {
+                anterior->siguiente = actual->siguiente;
+            }
+            delete actual;
+            longitud--;
+
+            return proceso;
+        }
+        anterior = actual;
+        actual = actual->siguiente;
+    }
+
+    return Proceso(-1);  // Proceso no encontrado
+}
+
+void Lista::buscarProcesoPorPID(int pid) {
+    pnodoLista actual = primero;
+
+    while (actual != nullptr) {
+        if (actual->valor.getPID() == pid) {
+            return &(actual->valor); // Retorna un puntero al proceso
+        }
+        actual = actual->siguiente;
+    }
+    
+    return nullptr; // No se encontró el proceso
+}
+
 int Lista::getLongitud(){
     return this->longitud;
 }
+
+
 
 // Destructor
 Lista::~Lista() {

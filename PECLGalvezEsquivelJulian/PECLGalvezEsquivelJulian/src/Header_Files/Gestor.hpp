@@ -33,6 +33,8 @@ class Gestor{
         void buscarProcesoPorNombreUsuario();
         void eliminarProcesoPorPID();
         void cambiarPrioridadProcesoPorPID();
+		void eliminarProcesoPorPID(int pid);
+		void cambiarPrioridadProcesoPorPID(int pid);
         void reiniciar();
         
     private:
