@@ -11,6 +11,7 @@ void Pila::insertar(Proceso v){
     nuevo = new NodoPila(v,ultimo);
     ultimo = nuevo;
     longitud++;
+	nuevo->valor.setEstado(false);
 }
 
 void Pila::extraer(){

@@ -1,5 +1,6 @@
 #include "src/Header_Files/Lista.hpp"
 #include "src/Header_Files/Proceso.hpp"
+#include "src/Header_Files/NodoLista.hpp"
 #include <iostream>
 using namespace std;
 
@@ -12,63 +13,58 @@ Lista::Lista() {
 
 // Método para mostrar los procesos normales en formato tabla
 void Lista::muestraProcesos()  {
-   if (longitud < 1) {
-        cout << "No hay procesos en la lista normal." << endl;
-        return;
-    }
-
-    cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
+   if(longitud==0){
+		cout << "Esta cola se encuentra vacia." << endl;
+	}else{
+		cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
     cout << "---------------------------------------------------" << endl; // Línea de separación
-
-   
-    while (ultimo != nullptr) {
-        Proceso& proceso = ultimo->valor; // Acceder al proceso del nodo
-
-        cout << proceso.getPID() << "\t" 
-             << proceso.getUsuario() << "\t" 
-             << proceso.getTipo() << "\t" 
-             << proceso.getEstado() << "\t" 
-             << proceso.getPrioridad() << endl;
-
-        ultimo = ultimo->siguiente; // Mover al siguiente nodo
+    pnodoLista aux = ultimo;
+    while(aux){
+        aux->valor.mostrarEnTabla();
+        aux = aux->siguiente;
     }
+    cout << endl;
+    }
+
+    
 }
 
 // Método para mostrar los procesos de tiempo real en formato tabla
 
 
- void Lista::menorPrioridad(){
+ Proceso Lista::menorPrioridad(){
     if(longitud < 1){
         Proceso p;
         p.setVacio(1);
-        return p;
+        return p ;
     }
     pnodoLista aux = ultimo;
-    pnodoLista maximo = ultimo;
     
-    while(aux->siguiente != NULL){
-        if(aux->siguiente->valor.getPrioridad() > maximo->valor.getPrioridad())
-            maximo = aux->siguiente;
-        aux = aux->siguiente;
-    }
-    return maximo->valor;
+    while(aux != NULL){
+        if(aux->valor.getPID() > aux->siguiente->valor.getPID()){
+            ultimo = aux->siguiente;
+			aux->siguiente;
+		}
+	}
+ 
 }
 
-   void Lista::mayorPrioridad(){
+   Proceso Lista::mayorPrioridad(){
     if(longitud < 1){
         Proceso p;
         p.setVacio(1);
         return p;
     }
     pnodoLista aux = ultimo;
-    pnodoLista minimo = ultimo;
     
-    while(aux->siguiente != NULL){
-        if(aux->siguiente->valor.getPrioridad() < minimo->valor.getPrioridad())
-            minimo = aux->siguiente;
-        aux = aux->siguiente;
-    }
-    return minimo->valor;
+    while(aux != NULL){
+        if(aux->valor.getPID() < aux->siguiente->valor.getPID()){
+            ultimo = aux->siguiente;
+            aux->siguiente;
+		}
+	}
+	
+
 }
 
 void Lista::buscarProcesosUsuario(string user){
@@ -77,15 +73,31 @@ void Lista::buscarProcesosUsuario(string user){
     pnodoLista aux = ultimo;
     while(aux != NULL){
         if(aux->valor.getUsuario() == user){
-            aux->valor.mostrar();
+            aux->valor.mostrarEnTabla();
+			 aux = aux->siguiente;
+        
+	 }else{ aux = aux->siguiente;
+    }
+	}
+}
+
+void Lista::buscarProcesosPID(int pid){
+    if(longitud < 1)
+        return;
+    pnodoLista aux = ultimo;
+    while(aux != NULL){
+        if(aux->valor.getPID() == pid){
+            aux->valor.mostrar(true);
+			return;
         }
-        aux = aux->siguiente;
+        aux->siguiente;
     }
 }
 
 void Lista::enlistar(Proceso v){
 	pnodoLista nuevo;
     nuevo = new NodoLista(v,ultimo);
+	nuevo->valor.setEstado(true);
     ultimo = nuevo;
     longitud++;	
 }
@@ -100,39 +112,58 @@ void Lista::extraer(){
     delete nodo;
 }
 
-void Lista::buscarYEliminarProceso(int pid) {
 
+/*void Lista::buscarYEliminarProceso(int pid) {
+    if (longitud < 1) {
+        cout << "La lista está vacía." << endl;
+        return ;
+    }
     pnodoLista nodo;
+	nodo = ultimo;
     if(!ultimo)
         return;
-    nodo = ultimo;
-	while (PID != pid){
+	while (nodo->valor.getPID() != pid){
 		ultimo = nodo->siguiente;
-		if (PID == pid) 
-			longitud--;
-			delete nodo;
+		if (nodo->valor.getPID() == pid) {
+			
+			nodo->valor.mostrar(true);
 	}
 	
 }
-
-
-void Lista::buscarProcesoPorPID(int pid) {
+}
+*/
+void Lista::buscarProcesoPID(int pid) {
+	if (longitud < 1) {
+        cout << "La lista está vacía." << endl;
+        return;
+    }
+	
    pnodoLista nodo;
+   nodo = ultimo;
     if(!ultimo){
 	return;}
-    nodo = ultimo;
-	while (PID != pid){
+	while (nodo->valor.getPID() != pid){
 		ultimo = nodo->siguiente;
-		if (PID == pid) {
-			proceso.mostrar();
-	    }
-	
+		if (nodo->valor.getPID() == pid) {
+			cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
+    cout << "---------------------------------------------------" << endl; // Línea de separación
+
+
+        cout << nodo->valor.getPID() << "\t" 
+             << nodo->valor.getUsuario() << "\t" 
+             << nodo->valor.getTipo() << "\t" 
+             << nodo->valor.getEstado() << "\t" 
+             << nodo->valor.getPrioridad() << endl;
+
+    }
+			nodo->valor.mostrar(true);
+	    
 	}
 	
 }
     
    // return nullptr; // No se encontró el proceso
-}
+
 
 int Lista::getLongitud(){
     return this->longitud;
@@ -150,4 +181,3 @@ Lista::~Lista() {
     }
 	longitud=0;
 }
-	

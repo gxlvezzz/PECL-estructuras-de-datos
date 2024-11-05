@@ -8,10 +8,14 @@ void Proceso::crearProceso(){
 	int pid = 300 + (rand() %49);
     this->PID = pid;
     int num = rand() % 10;
-    string usuario = "user" + (0 + num);
+    this-> usuario = ("user" + to_string(num));
     this->tipo = (rand() % 2);
+	if (tipo == true) {
+		prioridad = -19 + (rand()%39);
+	}else{
+		prioridad = 120 + (rand()%100);
+	}
 }
-
 void Proceso::setVacio(bool v){
     this->vacio = v;
 }
@@ -24,7 +28,7 @@ void Proceso::mostrar(bool mostrartodo){
     string Tipo;
     if(!tipo){
         Tipo = "normal";
-    }else{
+    }else {
         Tipo = "tiempo real";
     }
     
@@ -41,6 +45,8 @@ void Proceso::mostrar(bool mostrartodo){
 	}
     cout << endl;
 }
+
+
 
 bool Proceso::getTipo(){
     return this->tipo;
@@ -68,6 +74,29 @@ void Proceso::setPrioridad(int p){
 
 int Proceso::getPID(){
 	return PID;
+}
+
+void Proceso::mostrarEnTabla(){
+	string Tipo;
+	string e ;
+	if(!tipo){
+        Tipo = "normal";
+    }else{
+        Tipo = "tiempo real";
+    }
+    
+    if(true){
+        e = "parado";
+        if(estado){
+            e = "ejecucion";
+        }
+    }
+
+	cout << PID << "\t" 
+             << usuario << "\t" 
+             << Tipo << "\t\t"  
+             << e << "\t\t" 
+             << prioridad << endl;
 }
 
 Proceso::~Proceso()

@@ -18,7 +18,7 @@ public:
     int getPrioridad();
     void setPrioridad(int p);
     int getPID();
-	
+	void mostrarEnTabla();
 private:
     bool tipo;
     int PID;

@@ -29,14 +29,17 @@ public:
     void extraer();
 	
 	//Método para ordenar por menor prioridad
-	void menorPrioridad();
+	Proceso menorPrioridad();
 	
 	//Método para ordenar por mayor prioridad
-	void mayorPrioridad();
+	Proceso mayorPrioridad();
 	//Metodo para encontrar y eliminar un proceso 
 	void buscarYEliminarProceso(int pid);
 	//Metodo para encontrar un proceso por PID
-	void buscarProcesoPorPID(int pid);
+	
+	void buscarProcesoPID(int pid);
+	
+	void buscarProcesosPID(int pid);
 	
 	int getLongitud();
 	
