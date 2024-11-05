@@ -1,6 +1,7 @@
 #include "src/Header_Files/Lista.hpp"
 #include "src/Header_Files/Proceso.hpp"
 #include "src/Header_Files/NodoLista.hpp"
+#include "src/Header_Files/Pila.hpp"
 #include <iostream>
 using namespace std;
 
@@ -68,30 +69,39 @@ void Lista::muestraProcesos()  {
 }
 
 void Lista::buscarProcesosUsuario(string user){
-    if(longitud < 1)
+    if(longitud < 1){
         return;
+	}
     pnodoLista aux = ultimo;
     while(aux != NULL){
         if(aux->valor.getUsuario() == user){
             aux->valor.mostrarEnTabla();
 			 aux = aux->siguiente;
         
-	 }else{ aux = aux->siguiente;
+	 }else{ 
+		 aux = aux->siguiente;
     }
 	}
 }
 
-void Lista::buscarProcesosPID(int pid){
-    if(longitud < 1)
+void Lista::buscarProcesosPID(int pid, bool b){
+    if(longitud < 1){
         return;
+	}
     pnodoLista aux = ultimo;
     while(aux != NULL){
         if(aux->valor.getPID() == pid){
-            aux->valor.mostrar(true);
-			return;
-        }
-        aux->siguiente;
+            aux->valor.mostrarEnTabla();
+			 
+        if (b){
+			cout<<"\n"<< endl;
+			aux->valor.mostrar(true);
+			aux = aux->siguiente;
+		}
+	 }else{ 
+		 aux = aux->siguiente;
     }
+	}
 }
 
 void Lista::enlistar(Proceso v){
@@ -102,14 +112,28 @@ void Lista::enlistar(Proceso v){
     longitud++;	
 }
 
-void Lista::extraer(){
-    pnodoLista nodo;
-    if(!ultimo)
-        return;
-    nodo = ultimo;
-    ultimo = nodo->siguiente;
-    longitud--;
+Proceso Lista::extraer(int pid){
+    if (!ultimo) return Proceso();
+
+    pnodoLista nodo = ultimo;
+    pnodoLista anterior = nullptr;
+
+    while (nodo->valor.getPID() != pid) {
+        anterior = nodo;
+        nodo = nodo->siguiente;
+    }
+    if (!nodo) return Proceso();
+	Proceso procesoEliminado = nodo->valor;
+    if (nodo == ultimo) {
+        ultimo = nodo->siguiente;
+    } else {
+
+        anterior->siguiente = nodo->siguiente;
+    }
+
     delete nodo;
+    longitud--;
+	return procesoEliminado;
 }
 
 
@@ -132,37 +156,7 @@ void Lista::extraer(){
 }
 }
 */
-void Lista::buscarProcesoPID(int pid) {
-	if (longitud < 1) {
-        cout << "La lista está vacía." << endl;
-        return;
-    }
-	
-   pnodoLista nodo;
-   nodo = ultimo;
-    if(!ultimo){
-	return;}
-	while (nodo->valor.getPID() != pid){
-		ultimo = nodo->siguiente;
-		if (nodo->valor.getPID() == pid) {
-			cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
-    cout << "---------------------------------------------------" << endl; // Línea de separación
 
-
-        cout << nodo->valor.getPID() << "\t" 
-             << nodo->valor.getUsuario() << "\t" 
-             << nodo->valor.getTipo() << "\t" 
-             << nodo->valor.getEstado() << "\t" 
-             << nodo->valor.getPrioridad() << endl;
-
-    }
-			nodo->valor.mostrar(true);
-	    
-	}
-	
-}
-    
-   // return nullptr; // No se encontró el proceso
 
 
 int Lista::getLongitud(){

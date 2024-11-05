@@ -27,6 +27,21 @@ void Cola::encolar(Proceso v){
     longitud++;	
 }
 
+void Cola::ordenarPorPrioridad() {
+    if (longitud < 2) return; // No hay necesidad de ordenar si la cola tiene menos de 2 elementos
+
+    for (pnodoCola i = ultimo; i != NULL; i = i->siguiente) {
+        for (pnodoCola j = i->siguiente; j != NULL; j = j->siguiente) {
+            if (i->valor.getPrioridad() > j->valor.getPrioridad()) {
+                // Intercambiar los valores de los nodos si la prioridad de i es mayor que la de j
+                Proceso temp = i->valor;
+                i->valor = j->valor;
+                j->valor = temp;
+            }
+        }
+    }
+}
+
 /*void Cola::encolarProcesoNormal(Cola& c){
     pnodoCola aux = ultimo;
     while(aux){

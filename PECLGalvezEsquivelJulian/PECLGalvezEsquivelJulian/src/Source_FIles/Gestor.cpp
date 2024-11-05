@@ -50,19 +50,25 @@ void Gestor::encolarProcesos(){
 		
 		if(colaGPU0.getLongitud() < colaGPU1.getLongitud()){
 		colaGPU0.encolar(proceso);
+		colaGPU0.ordenarPorPrioridad();
 	}else if(colaGPU1.getLongitud() < colaGPU0.getLongitud()){
-		colaGPU1.encolar(proceso);	
+		colaGPU1.encolar(proceso);
+		colaGPU1.ordenarPorPrioridad();	
 		}else{
-		colaGPU0.encolar(proceso);		}
+		colaGPU0.encolar(proceso);
+		colaGPU0.ordenarPorPrioridad();}
 	
 	}else{
 		
 		if(colaGPU2.getLongitud() < colaGPU3.getLongitud()){
 		colaGPU2.encolar(proceso);
+		colaGPU2.ordenarPorPrioridad();
 	}else if(colaGPU3.getLongitud() < colaGPU2.getLongitud()){
-		colaGPU3.encolar(proceso);	
+		colaGPU3.encolar(proceso);
+		colaGPU3.ordenarPorPrioridad();
 		}else{
 		colaGPU2.encolar(proceso);
+		colaGPU2.ordenarPorPrioridad();
 	}}
 	cola.encolar(proceso);
 	pila.extraer();
@@ -158,10 +164,21 @@ void Gestor::eliminarProcesoPorPID() {
 	cout << "\tIntroduce un PID: ";
 	int pid;
     cin >> pid;
-	lista.buscarProcesosPID(pid);
-	cout << "El proceso se ha eliminado de la lista" << endl;
-
-
+	cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
+    cout << "---------------------------------------------------" << endl;
+	lista.buscarProcesosPID(pid,true);
+	if(proceso.getPrioridad()==true){
+	listaTiempoReal.extraer(pid);	
+	}else{
+	listaNormal.extraer(pid);
+	}
+	Proceso procesopililotico = lista.extraer(pid);
+	pila.insertar(procesopililotico);
+	
+	
+	
+	
+	
 }
 
 
@@ -170,7 +187,8 @@ void Gestor::cambiarPrioridadProcesoPorPID() {
 	cout << "\tIntroduce un PID: ";
 	int pid;
     cin >> pid;
-	lista.buscarProcesosPID(pid);
+	cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
+	lista.buscarProcesosPID(pid, false);
 	cout << "\tIntroduce una prioridad: ";
 	int prioridad;
 	cin >> prioridad;

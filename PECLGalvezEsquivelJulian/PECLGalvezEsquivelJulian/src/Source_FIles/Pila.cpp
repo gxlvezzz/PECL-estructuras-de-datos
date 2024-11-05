@@ -14,6 +14,7 @@ void Pila::insertar(Proceso v){
 	nuevo->valor.setEstado(false);
 }
 
+
 void Pila::extraer(){
     pnodoPila nodo;
     if(!ultimo)

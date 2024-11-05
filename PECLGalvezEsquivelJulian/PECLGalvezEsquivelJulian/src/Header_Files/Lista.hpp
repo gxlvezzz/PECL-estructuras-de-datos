@@ -26,7 +26,7 @@ public:
 	void buscarProcesosUsuario(string user) ;
 	
 	// Método para vaciar la lista al reiniciar
-    void extraer();
+    Proceso extraer(int pid);
 	
 	//Método para ordenar por menor prioridad
 	Proceso menorPrioridad();
@@ -37,9 +37,9 @@ public:
 	void buscarYEliminarProceso(int pid);
 	//Metodo para encontrar un proceso por PID
 	
-	void buscarProcesoPID(int pid);
+
 	
-	void buscarProcesosPID(int pid);
+	void buscarProcesosPID(int pid, bool b);
 	
 	int getLongitud();
 	

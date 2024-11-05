@@ -17,6 +17,7 @@ public:
 	void vaciar();
 	void extraer();
 	Proceso cima();
+	void ordenarPorPrioridad();
 	
 private: 
 	
