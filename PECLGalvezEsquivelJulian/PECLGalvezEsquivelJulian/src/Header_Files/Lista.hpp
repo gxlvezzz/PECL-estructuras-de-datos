@@ -21,7 +21,7 @@ public:
     // Método para mostrar la lista de procesos en formato tabla
     void muestraProcesos() ;
 	
-	
+	void ordenarListaPorPrioridad();
 	//Método para buscar los procesos del usuario
 	void buscarProcesosUsuario(string user) ;
 	
@@ -33,6 +33,11 @@ public:
 	
 	//Método para ordenar por mayor prioridad
 	Proceso mayorPrioridad();
+	
+	Proceso obtenerMenorPrioridad();
+	
+	Proceso obtenerMayorPrioridad();
+	
 	//Metodo para encontrar y eliminar un proceso 
 	void buscarYEliminarProceso(int pid);
 	//Metodo para encontrar un proceso por PID

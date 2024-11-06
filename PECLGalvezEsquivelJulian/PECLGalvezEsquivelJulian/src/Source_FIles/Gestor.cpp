@@ -16,6 +16,8 @@ using namespace std;
 	Lista listaNormal;
 	Lista listaTiempoReal;
 	Lista lista;
+	
+	
 
 	
 void Gestor::genera12Procesos(){
@@ -120,36 +122,34 @@ void Gestor::muestraProcesosTiempoReal() {
     listaTiempoReal.muestraProcesos(); // Llama directamente a la función de Lista
 }
 	
-void Gestor::buscarProcesos(){
+void Gestor::buscarProcesos() {
+	
+    listaNormal.obtenerMayorPrioridad();
+    listaTiempoReal.obtenerMenorPrioridad();
+
+
+    Proceso procesoMenorNormal = listaNormal.obtenerMenorPrioridad();
+
+
     cout << "\tNormal menor prioridad -> \t\t";
-	Proceso menor = listaNormal.menorPrioridad();
-    
-    string estado = "parado";
-    if(proceso.getEstado())
-        estado = "ejecucion";
-        
-    string tipo = "normal";
-    if(proceso.getTipo())
-        tipo = "tiempo real";
-    
-    cout << "\tEl proceso cuyo PID es "<< proceso.getPID() << " es de tipo " << tipo
-    << ", su estado es " << estado << " y su prioridad es: " << proceso.getPrioridad() << endl;
-    
+    string estadoMenorNormal = procesoMenorNormal.getEstado() ? "ejecución" : "parado";
+    string tipoMenorNormal = procesoMenorNormal.getTipo() ? "tiempo real" : "normal";
+    cout << "El proceso cuyo PID es " << procesoMenorNormal.getPID()
+         << " es de tipo " << tipoMenorNormal
+         << ", su estado es " << estadoMenorNormal
+         << " y su prioridad es: " << procesoMenorNormal.getPrioridad() << endl;
+
+    Proceso procesoMayorTiempoReal = listaTiempoReal.obtenerMayorPrioridad();
+
     cout << "\tTiempo real mayor prioridad -> \t\t";
-    proceso = listaTiempoReal.mayorPrioridad();
-    
-    estado = "parado";
-    if(proceso.getEstado())
-        estado = "ejecucion";
-        
-    tipo = "normal";
-    if(proceso.getTipo())
-        tipo = "tiempo real";
-    
-    cout << "\tEl proceso cuyo PID es "<< proceso.getPID() << " es de tipo " << tipo
-    << ", su estado es " << estado << " y su prioridad es: " << proceso.getPrioridad() << endl;
- 
+    string estadoMayorTiempoReal = procesoMayorTiempoReal.getEstado() ? "ejecución" : "parado";
+    string tipoMayorTiempoReal = procesoMayorTiempoReal.getTipo() ? "tiempo real" : "normal";
+    cout << "El proceso cuyo PID es " << procesoMayorTiempoReal.getPID()
+         << " es de tipo " << tipoMayorTiempoReal
+         << ", su estado es " << estadoMayorTiempoReal
+         << " y su prioridad es: " << procesoMayorTiempoReal.getPrioridad() << endl;
 }
+
 
 void Gestor::buscarProcesoPorNombreUsuario(){
     string o;
@@ -172,15 +172,10 @@ void Gestor::eliminarProcesoPorPID() {
 	}else{
 	listaNormal.extraer(pid);
 	}
-	Proceso procesopililotico = lista.extraer(pid);
-	pila.insertar(procesopililotico);
-	
-	
-	
-	
+	Proceso procesoeliminado = lista.extraer(pid);
+	pila.insertar(procesoeliminado);
 	
 }
-
 
 void Gestor::cambiarPrioridadProcesoPorPID() {
     
@@ -208,8 +203,6 @@ void Gestor::reiniciar() {
 		
         listaNormal.~Lista();
         listaTiempoReal.~Lista();
-
-        // Opcional: Reiniciar contadores o variables adicionales
 
         cout << "El programa ha sido reiniciado al estado inicial." << endl;
     }

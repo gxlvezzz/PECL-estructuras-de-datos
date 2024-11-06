@@ -11,6 +11,9 @@ Lista::Lista() {
 	ultimo=NULL;
 }
 
+	
+	
+
 
 // Método para mostrar los procesos normales en formato tabla
 void Lista::muestraProcesos()  {
@@ -30,42 +33,43 @@ void Lista::muestraProcesos()  {
     
 }
 
-// Método para mostrar los procesos de tiempo real en formato tabla
 
+void Lista::ordenarListaPorPrioridad() {
+    if (longitud < 2) return; // 
 
- Proceso Lista::menorPrioridad(){
-    if(longitud < 1){
-        Proceso p;
-        p.setVacio(1);
-        return p ;
+    for (pnodoLista i = ultimo; i != NULL; i = i->siguiente) {
+        for (pnodoLista j = i->siguiente; j != NULL; j = j->siguiente) {
+            if (i->valor.getPrioridad() > j->valor.getPrioridad()) {
+                // Intercambiar los valores de los nodos si la prioridad de i es mayor que la de j
+                Proceso temp = i->valor;
+                i->valor = j->valor;
+                j->valor = temp;
+            }
+        }
     }
-    pnodoLista aux = ultimo;
-    
-    while(aux != NULL){
-        if(aux->valor.getPID() > aux->siguiente->valor.getPID()){
-            ultimo = aux->siguiente;
-			aux->siguiente;
-		}
-	}
- 
 }
 
-   Proceso Lista::mayorPrioridad(){
-    if(longitud < 1){
+Proceso Lista::obtenerMenorPrioridad() {
+    ordenarListaPorPrioridad();
+	if (longitud < 1) {
         Proceso p;
-        p.setVacio(1);
+        p.setVacio(1);  
         return p;
     }
-    pnodoLista aux = ultimo;
-    
-    while(aux != NULL){
-        if(aux->valor.getPID() < aux->siguiente->valor.getPID()){
-            ultimo = aux->siguiente;
-            aux->siguiente;
-		}
-	}
-	
+    return ultimo->valor;
+}
 
+Proceso Lista::obtenerMayorPrioridad() {
+	ordenarListaPorPrioridad();
+    if (longitud < 1) {
+        Proceso p;
+        p.setVacio(1);  
+    }
+    pnodoLista nodo = ultimo;
+    while (nodo->siguiente != NULL) {
+        nodo = nodo->siguiente;
+    }
+    return nodo->valor;
 }
 
 void Lista::buscarProcesosUsuario(string user){
@@ -175,3 +179,4 @@ Lista::~Lista() {
     }
 	longitud=0;
 }
+
