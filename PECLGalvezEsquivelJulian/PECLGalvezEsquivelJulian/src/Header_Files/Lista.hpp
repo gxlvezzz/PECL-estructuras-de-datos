@@ -44,7 +44,7 @@ public:
 	
 
 	
-	void buscarProcesosPID(int pid, bool b);
+	Proceso* buscarProcesosPID(int pid, bool b);
 	
 	int getLongitud();
 	

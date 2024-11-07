@@ -6,6 +6,34 @@ Pila::Pila()
     longitud = 0;
 }
 
+bool Pila::buscarPID(int pid){
+    if(longitud < 1){
+        return false;
+	}
+    pnodoPila aux = ultimo;
+    while(aux != NULL){
+        if(aux->valor.getPID() == pid){
+           return true; 
+    }
+	aux = aux->siguiente;
+	}
+	return false;
+}
+
+bool Pila::buscarPrioridad(int prioridad){
+    if(longitud < 1){
+        return false;
+	}
+    pnodoPila aux = ultimo;
+    while(aux != NULL){
+        if(aux->valor.getPrioridad() == prioridad){
+           return true; 
+    }
+	aux = aux->siguiente;
+	}
+	return false;
+}
+
 void Pila::insertar(Proceso v){
     pnodoPila nuevo;
     nuevo = new NodoPila(v,ultimo);
@@ -50,6 +78,8 @@ void Pila::mostrar(){
 int Pila::getLongitud(){
     return this->longitud;
 }
+
+
 
 Pila::~Pila()
 {

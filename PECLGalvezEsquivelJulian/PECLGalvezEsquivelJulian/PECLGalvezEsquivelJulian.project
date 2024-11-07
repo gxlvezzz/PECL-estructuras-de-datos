@@ -112,7 +112,7 @@
       <File Name="src/Source_Files/NodoLista.cpp"/>
       <File Name="src/Source_Files/NodoCola.cpp"/>
       <File Name="src/Source_Files/NodoArbol.cpp"/>
-      <File Name="src/Source_Files/Lista.cpp"/>
+      <File Name="src/Source_Files/Lista.cpp" ExcludeProjConfig=""/>
       <File Name="src/Source_Files/Gestor.cpp"/>
       <File Name="src/Source_Files/Cola.cpp"/>
       <File Name="src/Source_Files/Arbol.cpp"/>

@@ -1,7 +1,7 @@
 {
  "file_mask": "*.cpp;*.h;*.hpp;*.cxx;*.cc;*.hxx",
  "ignore_spec": "/.git/;/.svn/;/build/;/build-;/CPack_Packages/;/CMakeFiles/",
- "codelite_indexer": "C:\\EstructurasDeDatos\\codelite-amd64-17.0.0\\codelite-amd64-17.0.0\\codelite\\codelite-ctags.exe",
+ "codelite_indexer": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\codelite-amd64-17.0.0\\codelite\\codelite-ctags.exe",
  "limit_results": 150,
  "search_path": ["."],
  "types": [{

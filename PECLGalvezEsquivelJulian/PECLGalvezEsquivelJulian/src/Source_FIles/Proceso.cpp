@@ -1,11 +1,16 @@
 #include "src/Header_Files/Proceso.hpp"
+#include "src/Header_Files/Pila.hpp"
 
+Pila pilaPID;
+Pila pilaProcesos;
 
 Proceso::Proceso() { PID = 1; }
 
 
+
 void Proceso::crearProceso(){
-	int pid = 300 + (rand() %49);
+	
+	int pid = 300 + (rand() %48);
     this->PID = pid;
     int num = rand() % 10;
     this-> usuario = ("user" + to_string(num));
@@ -92,11 +97,19 @@ void Proceso::mostrarEnTabla(){
         }
     }
 
-	cout << PID << "\t" 
-             << usuario << "\t" 
-             << Tipo << "\t\t"  
-             << e << "\t\t" 
-             << prioridad << endl;
+	cout << PID << "\t";
+    cout << usuario << "\t";
+
+    cout << Tipo << "\t";
+
+    cout << e;
+    if (e == "parado"){
+		cout << "\t\t";
+	}else{
+		cout << "\t";
+	}
+
+    cout << prioridad << endl;
 }
 
 Proceso::~Proceso()

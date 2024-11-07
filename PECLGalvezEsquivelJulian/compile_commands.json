@@ -1,85 +1,85 @@
 [{
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoLista.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoLista.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoLista.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Arbol.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Arbol.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Arbol.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoPila.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoPila.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoPila.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Cola.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Cola.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Cola.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Pila.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Pila.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Pila.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoArbol.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoArbol.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoArbol.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\main.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\main.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\main.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoCola.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoCola.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoCola.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Arbol.hpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Arbol.hpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Arbol.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Pila.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Pila.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Pila.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Gestor.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Gestor.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Gestor.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoPila.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoPila.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoPila.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Cola.hpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Cola.hpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Cola.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Proceso.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Proceso.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Proceso.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Gestor.hpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Gestor.hpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Gestor.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoLista.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoLista.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoLista.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Proceso.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Proceso.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Proceso.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Proceso.hpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Proceso.hpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Proceso.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoArbol.hpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoArbol.hpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoArbol.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Cola.hpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Cola.hpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Cola.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoCola.hpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoCola.hpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoCola.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Gestor.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Gestor.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Gestor.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Lista.hpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Lista.hpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Lista.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Lista.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Lista.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Lista.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoCola.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoCola.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoCola.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Arbol.hpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Arbol.hpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Arbol.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Proceso.hpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Proceso.hpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Proceso.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Lista.hpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Lista.hpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Lista.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Arbol.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Arbol.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Arbol.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Gestor.hpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Gestor.hpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Gestor.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoLista.hpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoLista.hpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoLista.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoLista.hpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoLista.hpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoLista.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoPila.hpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoPila.hpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoPila.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoArbol.hpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoArbol.hpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoArbol.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Cola.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Cola.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Cola.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoPila.hpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoPila.hpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoPila.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Lista.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Lista.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\Lista.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoCola.hpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoCola.hpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\NodoCola.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoArbol.cpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoArbol.cpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Source_Files\\NodoArbol.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Pila.hpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Pila.hpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Pila.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Pila.hpp",
-  "directory": "C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
-  "command": "clang++ -c C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Pila.hpp -o C:\\Users\\adrii\\OneDrive\\Escritorio\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\src\\Header_Files\\Pila.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\main.cpp",
+  "directory": "C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian",
+  "command": "clang++ -c C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\main.cpp -o C:\\Users\\julia_ntxs1ki\\OneDrive\\Desktop\\PECL-estructuras-de-datos\\PECLGalvezEsquivelJulian\\PECLGalvezEsquivelJulian\\main.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
  }]

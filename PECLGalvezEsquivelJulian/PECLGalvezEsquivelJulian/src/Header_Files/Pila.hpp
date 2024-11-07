@@ -13,6 +13,8 @@ public:
     Proceso cima();
     void mostrar();
     int getLongitud();
+	bool buscarPID(int pid);
+	bool buscarPrioridad(int prioridad);
 private:
     pnodoPila ultimo;
     int longitud;

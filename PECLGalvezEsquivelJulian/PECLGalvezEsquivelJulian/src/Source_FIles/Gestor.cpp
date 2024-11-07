@@ -21,13 +21,19 @@ using namespace std;
 
 	
 void Gestor::genera12Procesos(){
-	if(pila.getLongitud()<48){
-	for (int i=0; i<12; i++){
-	proceso.crearProceso();
-	pila.insertar(proceso);
-		}		
+	int procesosGenerados=0;
+	
+	if((pila.getLongitud() + cola.getLongitud() + lista.getLongitud())<48){
+		while (procesosGenerados<12){
+			Proceso nuevoProceso;
+			nuevoProceso.crearProceso();
+				if (pila.buscarPID(nuevoProceso.getPID()) == false){
+					pila.insertar(nuevoProceso);
+					procesosGenerados++;
+				}
+		}
 	}else{
-		cout << "La pila esta llena." << endl;
+		cout << "No se pueden generar mas de 48 procesos." << endl;
 		return;
 	}
 }
@@ -132,7 +138,7 @@ void Gestor::buscarProcesos() {
 
 
     cout << "\tNormal menor prioridad -> \t\t";
-    string estadoMenorNormal = procesoMenorNormal.getEstado() ? "ejecución" : "parado";
+    string estadoMenorNormal = procesoMenorNormal.getEstado() ? "ejecucion" : "parado";
     string tipoMenorNormal = procesoMenorNormal.getTipo() ? "tiempo real" : "normal";
     cout << "El proceso cuyo PID es " << procesoMenorNormal.getPID()
          << " es de tipo " << tipoMenorNormal
@@ -142,7 +148,7 @@ void Gestor::buscarProcesos() {
     Proceso procesoMayorTiempoReal = listaTiempoReal.obtenerMayorPrioridad();
 
     cout << "\tTiempo real mayor prioridad -> \t\t";
-    string estadoMayorTiempoReal = procesoMayorTiempoReal.getEstado() ? "ejecución" : "parado";
+    string estadoMayorTiempoReal = procesoMayorTiempoReal.getEstado() ? "ejecucion" : "parado";
     string tipoMayorTiempoReal = procesoMayorTiempoReal.getTipo() ? "tiempo real" : "normal";
     cout << "El proceso cuyo PID es " << procesoMayorTiempoReal.getPID()
          << " es de tipo " << tipoMayorTiempoReal
@@ -174,33 +180,57 @@ void Gestor::eliminarProcesoPorPID() {
 	}
 	Proceso procesoeliminado = lista.extraer(pid);
 	pila.insertar(procesoeliminado);
+	procesoeliminado.mostrarEnTabla();
+	procesoeliminado.mostrar(true);
 	
 }
 
 void Gestor::cambiarPrioridadProcesoPorPID() {
-    
-	cout << "\tIntroduce un PID: ";
-	int pid;
+    cout << "\tIntroduce un PID: ";
+    int pid;
     cin >> pid;
+
+    Proceso* procesoEncontrado = lista.buscarProcesosPID(pid, false); 
+    if (procesoEncontrado == nullptr) {  
+        cout << "No se encontró el proceso con el PID especificado." << endl;
+        return;
+    }
+
+    cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
+    procesoEncontrado->mostrarEnTabla();
+
+    bool esTiempoReal = procesoEncontrado->getTipo();
+
+    if (esTiempoReal) {
+        listaTiempoReal.extraer(pid);
+    } else {
+        listaNormal.extraer(pid);
+    }
+
+    cout << "\tIntroduce una nueva prioridad: ";
+    int nuevaPrioridad;
+    cin >> nuevaPrioridad;
+
+    procesoEncontrado->setPrioridad(nuevaPrioridad);
+
+    if (esTiempoReal) {
+        listaTiempoReal.enlistar(*procesoEncontrado);  
+    } else {
+        listaNormal.enlistar(*procesoEncontrado);  
+    }
+	
 	cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
-	lista.buscarProcesosPID(pid, false);
-	cout << "\tIntroduce una prioridad: ";
-	int prioridad;
-	cin >> prioridad;
-	proceso.setPrioridad(prioridad);
-	cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
-    cout << "---------------------------------------------------" << endl;
-	proceso.mostrarEnTabla();
+    procesoEncontrado->mostrarEnTabla();
 }
 
+
 void Gestor::reiniciar() {
-        // Vaciamos las estructuras de datos
+        
         pila.~Pila();
         colaGPU0.~Cola();
 		colaGPU1.~Cola();
 		colaGPU2.~Cola();
-		colaGPU3.~Cola();
-		
+		colaGPU3.~Cola();		
         listaNormal.~Lista();
         listaTiempoReal.~Lista();
 
