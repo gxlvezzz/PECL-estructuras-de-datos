@@ -18,7 +18,11 @@ public:
     int getPrioridad();
     void setPrioridad(int p);
     int getPID();
+	void setPID(int n);
 	void mostrarEnTabla();
+	static int cadenaPID[12];
+	static int n;
+	int generarPID();
 private:
     bool tipo;
     int PID;

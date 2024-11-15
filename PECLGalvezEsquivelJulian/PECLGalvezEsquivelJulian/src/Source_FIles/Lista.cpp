@@ -108,7 +108,7 @@ Proceso* Lista::buscarProcesosPID(int pid, bool imprimir) {
 
 void Lista::enlistar(Proceso v){
 	pnodoLista nuevo;
-    nuevo = new NodoLista(v,ultimo);
+    nuevo = new NodoLista(v,siguiente,anterior);
 	nuevo->valor.setEstado(true);
     ultimo = nuevo;
     longitud++;	

@@ -20,22 +20,16 @@ using namespace std;
 	
 
 	
-void Gestor::genera12Procesos(){
-	int procesosGenerados=0;
+void Gestor::genera12Procesos() {
+	    // Generar los valores para cadenaPID
+    Proceso procesoAuxiliar;  // Crear una instancia de Proceso para llamar a generarPID
+    procesoAuxiliar.generarPID();
 	
-	if((pila.getLongitud() + cola.getLongitud() + lista.getLongitud())<48){
-		while (procesosGenerados<12){
-			Proceso nuevoProceso;
-			nuevoProceso.crearProceso();
-				if (pila.buscarPID(nuevoProceso.getPID()) == false){
-					pila.insertar(nuevoProceso);
-					procesosGenerados++;
-				}
-		}
-	}else{
-		cout << "No se pueden generar mas de 48 procesos." << endl;
-		return;
-	}
+    for (int i = 0; i < 12; i++) {
+		proceso=Proceso();
+        proceso.setPID(Proceso::cadenaPID[i]);  // Asignar un PID único del arreglo mezclado
+        pila.insertar(proceso);   // Insertar el nuevo proceso en la pila
+    }
 }
 
 int Gestor::ProcesosEnPila(){
@@ -44,8 +38,6 @@ int Gestor::ProcesosEnPila(){
 
 void Gestor::muestraProcesos(){
 	pila.mostrar();
-	
-	
 }
 void Gestor::borraProcesosPila(){
 	pila.~Pila();

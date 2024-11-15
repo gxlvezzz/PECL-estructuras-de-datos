@@ -22,7 +22,7 @@ public:
 private: 
 	
 	int longitud;
-	pnodoCola ultimo;
+	pnodoCola primero, ultimo;
 
 	
 	

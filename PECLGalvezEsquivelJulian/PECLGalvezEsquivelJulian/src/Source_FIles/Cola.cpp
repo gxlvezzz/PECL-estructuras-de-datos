@@ -7,13 +7,14 @@ using namespace std;
 
 Cola::Cola(){
 	longitud=0;
+	primero = NULL;
 	ultimo=NULL;
 }
 Cola::~Cola(){
 	pnodoCola aux;
-		while(ultimo){
-			aux = ultimo;
-			ultimo = ultimo->siguiente;
+		while(primero){
+			aux = primero;
+			primero = primero->siguiente;
 			delete aux;
     }
 	longitud=0;	

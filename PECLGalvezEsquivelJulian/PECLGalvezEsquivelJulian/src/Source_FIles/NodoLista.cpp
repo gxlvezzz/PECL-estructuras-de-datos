@@ -1,17 +1,17 @@
-#include "src/Header_Files/NodoLista.hpp"
-#include <iostream>
-#include <iomanip>
+#include <src/Header_Files/NodoLista.hpp>
+#include <src/Header_Files/Proceso.hpp>
 
-using namespace std;
-
-
-NodoLista::NodoLista(Proceso v, NodoLista* sig)
+NodoLista::NodoLista(Proceso* p, NodoLista* ant, NodoLista* sig)
 {
-    valor = v;
-    siguiente = sig;
+	this->valor = p;
+	this->anterior = ant;
+	this->siguiente = sig;
 }
 
 NodoLista::~NodoLista()
 {
+	if (valor != nullptr){
+			delete valor; //Eliminamos el proceso del programa.
+			valor = nullptr; //Evitamos que se quede un puntero colgante.
+	}
 }
-//NodoLista.cpp

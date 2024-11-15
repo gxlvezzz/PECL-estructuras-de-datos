@@ -1,25 +1,26 @@
 #include "src/Header_Files/Proceso.hpp"
 #include "src/Header_Files/Pila.hpp"
-
-Pila pilaPID;
-Pila pilaProcesos;
-
-Proceso::Proceso() { PID = 1; }
+#include <algorithm>
 
 
+int Proceso::n=300;
+int Proceso::cadenaPID[12] = {};
 
-void Proceso::crearProceso(){
-	
-	int pid = 300 + (rand() %48);
-    this->PID = pid;
-    int num = rand() % 10;
+Proceso::Proceso(){
+	int pid = 0;
+	this->PID = pid;
+	int num = rand() % 10;
     this-> usuario = ("user" + to_string(num));
-    this->tipo = (rand() % 2);
-	if (tipo == true) {
-		prioridad = -19 + (rand()%39);
-	}else{
-		prioridad = 120 + (rand()%100);
+	this->tipo = (rand() % 2);
+}
+int Proceso::generarPID(){
+	
+	for (int i=0; i<12; i++){
+		cadenaPID[i]= i+n;
 	}
+	random_shuffle(cadenaPID,cadenaPID+12);	
+	n+=12;
+    return 0;
 }
 void Proceso::setVacio(bool v){
     this->vacio = v;
@@ -79,6 +80,10 @@ void Proceso::setPrioridad(int p){
 
 int Proceso::getPID(){
 	return PID;
+}
+
+void Proceso::setPID(int a){
+	this->PID = a;
 }
 
 void Proceso::mostrarEnTabla(){
