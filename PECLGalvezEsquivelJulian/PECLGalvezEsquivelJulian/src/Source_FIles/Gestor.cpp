@@ -111,7 +111,7 @@ void Gestor::borraProcesosColas(){
 	colaGPU2.~Cola();
 	colaGPU3.~Cola();
 }
-
+/*
 void Gestor::muestraProcesosNormal() {
     listaNormal.muestraProcesos(); // Llama directamente a la función de Lista
 }
@@ -257,7 +257,7 @@ int Gestor::ProcesosEnListaTiempoReal(){
 	return listaTiempoReal.getLongitud();
 }
 
-
+*/
 Gestor::Gestor(){
 		
 }

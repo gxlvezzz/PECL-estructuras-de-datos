@@ -13,7 +13,7 @@ Lista::Lista() {
 
 	
 	
-
+/*
 
 // Método para mostrar los procesos normales en formato tabla
 void Lista::muestraProcesos()  {
@@ -146,7 +146,7 @@ int Lista::getLongitud(){
     return this->longitud;
 }
 
-
+*/
 
 // Destructor
 Lista::~Lista() {

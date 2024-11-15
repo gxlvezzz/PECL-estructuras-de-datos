@@ -26,7 +26,7 @@ class Gestor{
         void muestraProcesosGPUs0y1();
         void muestraProcesosGPUs2y3();
         void borraProcesosColas();
-        void enlistarProcesos();
+       /* void enlistarProcesos();
         void muestraProcesosNormal();
         void muestraProcesosTiempoReal(); 
         void buscarProcesos();
@@ -35,7 +35,7 @@ class Gestor{
 		void eliminarProcesoPorPID(int pid);
 		void cambiarPrioridadProcesoPorPID(); 
         void reiniciar();
-        
+        */
     private:
         
 };
