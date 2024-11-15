@@ -10,21 +10,17 @@ Cola::Cola(){
 	primero = NULL;
 	ultimo=NULL;
 }
-Cola::~Cola(){
-	pnodoCola aux;
-		while(primero){
-			aux = primero;
-			primero = primero->siguiente;
-			delete aux;
-    }
-	longitud=0;	
-}
+
 	
-	
-void Cola::encolar(Proceso v){
+void Cola::insertar(Proceso v){
 	pnodoCola nuevo;
-    nuevo = new NodoCola(v,ultimo);
-    ultimo = nuevo;
+    nuevo = new NodoCola(v);
+    if (ultimo)
+		ultimo->siguiente =nuevo;
+	ultimo = nuevo;
+
+	if (!primero)
+		primero=nuevo;
     longitud++;	
 }
 
@@ -59,35 +55,41 @@ int Cola::getLongitud(){
 }
 
 void Cola::mostrar(){
-	if(longitud==0){
-		cout << "Esta cola se encuentra vacia." << endl;
-	}else{
-    pnodoCola aux = ultimo;
-    while(aux){
-        aux->valor.mostrar(true);
-        aux = aux->siguiente;
-    }
-    cout << endl;
-}}
-
-void Cola::extraer(){
-    pnodoCola nodo;
-    if(!ultimo)
-        return;
-    nodo = ultimo;
-    ultimo = nodo->siguiente;
-    longitud--;
-    delete nodo;
+	pnodoCola aux = primero;
+	while(aux){
+		aux->valor.mostrar(true);
+		aux= aux->siguiente;
+	}
+	cout << endl;
 }
 
-Proceso Cola::cima(){
-    if(!ultimo){
-        Proceso pro;
-        pro.setVacio(true);
-        return ultimo->valor;
-    }
-    return ultimo->valor;
+
+Proceso Cola::eliminar(){
+	pnodoCola nodo;
+    Proceso v;
+	nodo = primero;
+	if(!nodo)
+		return Proceso();
+		primero = nodo -> siguiente;
+		v = nodo -> valor;
+		delete nodo;
+		if(!primero)
+			ultimo = NULL;
+		longitud--;
+		return v;
+	
 }
+Proceso Cola::verPrimero(){
+	return primero->valor;
+}
+
+
+Cola:: ~Cola(){
+	while(primero)
+		eliminar();
+}
+
+
 	
 
 

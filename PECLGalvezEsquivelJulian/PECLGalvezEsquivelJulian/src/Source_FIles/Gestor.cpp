@@ -49,28 +49,28 @@ void Gestor::encolarProcesos(){
 	if(proceso.getTipo()==false){
 		
 		if(colaGPU0.getLongitud() < colaGPU1.getLongitud()){
-		colaGPU0.encolar(proceso);
+		colaGPU0.insertar(proceso);
 		colaGPU0.ordenarPorPrioridad();
 	}else if(colaGPU1.getLongitud() < colaGPU0.getLongitud()){
-		colaGPU1.encolar(proceso);
+		colaGPU1.insertar(proceso);
 		colaGPU1.ordenarPorPrioridad();	
 		}else{
-		colaGPU0.encolar(proceso);
+		colaGPU0.insertar(proceso);
 		colaGPU0.ordenarPorPrioridad();}
 	
 	}else{
 		
 		if(colaGPU2.getLongitud() < colaGPU3.getLongitud()){
-		colaGPU2.encolar(proceso);
+		colaGPU2.insertar(proceso);
 		colaGPU2.ordenarPorPrioridad();
 	}else if(colaGPU3.getLongitud() < colaGPU2.getLongitud()){
-		colaGPU3.encolar(proceso);
+		colaGPU3.insertar(proceso);
 		colaGPU3.ordenarPorPrioridad();
 		}else{
-		colaGPU2.encolar(proceso);
+		colaGPU2.insertar(proceso);
 		colaGPU2.ordenarPorPrioridad();
 	}}
-	cola.encolar(proceso);
+	cola.insertar(proceso);
 	pila.extraer();
 	}
 }

@@ -10,13 +10,12 @@ class Cola{
 public:
 	Cola();
 	~Cola();
-	void encolar(Proceso v);
-	void encolarProcesoNormal(Cola& c);
+	void insertar(Proceso v);
 	int getLongitud();
 	void mostrar();
 	void vaciar();
-	void extraer();
-	Proceso cima();
+	Proceso eliminar();
+	Proceso verPrimero();
 	void ordenarPorPrioridad();
 	
 private: 
