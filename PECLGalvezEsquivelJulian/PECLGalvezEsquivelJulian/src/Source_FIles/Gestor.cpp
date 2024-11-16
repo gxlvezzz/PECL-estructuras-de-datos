@@ -21,8 +21,7 @@ using namespace std;
 
 	
 void Gestor::genera12Procesos() {
-	    // Generar los valores para cadenaPID
-    Proceso procesoAuxiliar;  // Crear una instancia de Proceso para llamar a generarPID
+    Proceso procesoAuxiliar;  
     procesoAuxiliar.generarPID();
 	
     for (int i = 0; i < 12; i++) {
@@ -44,36 +43,47 @@ void Gestor::borraProcesosPila(){
 }
 
 void Gestor::encolarProcesos(){
+	Proceso procesoAuxiliar;
+	procesoAuxiliar.generarPrioridadNormal();
+	procesoAuxiliar.generarPrioridadTiempoReal();
+	int prioridadNormal=0;
+	int prioridadTiempoReal=0;
+	int indice = 0;
+
 	while (pila.getLongitud()!=0){
 	proceso = pila.cima();
+
 	if(proceso.getTipo()==false){
-		
-		if(colaGPU0.getLongitud() < colaGPU1.getLongitud()){
+		indice = Proceso::cadenaPrioridadNormal[prioridadNormal];
+		proceso.setPrioridad(indice);
+		prioridadNormal++;
+		if(colaGPU0.getLongitud() <= colaGPU1.getLongitud()){
 		colaGPU0.insertar(proceso);
 		colaGPU0.ordenarPorPrioridad();
 	}else if(colaGPU1.getLongitud() < colaGPU0.getLongitud()){
 		colaGPU1.insertar(proceso);
 		colaGPU1.ordenarPorPrioridad();	
-		}else{
-		colaGPU0.insertar(proceso);
-		colaGPU0.ordenarPorPrioridad();}
+		}
 	
 	}else{
-		
-		if(colaGPU2.getLongitud() < colaGPU3.getLongitud()){
+		indice = Proceso::cadenaPrioridadTiempoReal[prioridadTiempoReal];
+		proceso.setPrioridad(indice);
+		prioridadTiempoReal++;
+		if(colaGPU2.getLongitud() <= colaGPU3.getLongitud()){
 		colaGPU2.insertar(proceso);
 		colaGPU2.ordenarPorPrioridad();
 	}else if(colaGPU3.getLongitud() < colaGPU2.getLongitud()){
 		colaGPU3.insertar(proceso);
 		colaGPU3.ordenarPorPrioridad();
-		}else{
-		colaGPU2.insertar(proceso);
-		colaGPU2.ordenarPorPrioridad();
-	}}
+		}}
 	cola.insertar(proceso);
 	pila.extraer();
 	}
 }
+
+
+
+
 		
 int Gestor::ProcesosEnGPU0(){
 	return colaGPU0.getLongitud();

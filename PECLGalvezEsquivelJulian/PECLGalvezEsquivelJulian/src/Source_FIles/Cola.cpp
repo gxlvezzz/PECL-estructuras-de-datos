@@ -25,30 +25,30 @@ void Cola::insertar(Proceso v){
 }
 
 void Cola::ordenarPorPrioridad() {
-    if (longitud < 2) return; // No hay necesidad de ordenar si la cola tiene menos de 2 elementos
+    if (longitud < 2) return;  // No hay necesidad de ordenar si la cola tiene menos de 2 elementos
 
-    for (pnodoCola i = ultimo; i != NULL; i = i->siguiente) {
-        for (pnodoCola j = i->siguiente; j != NULL; j = j->siguiente) {
-            if (i->valor.getPrioridad() > j->valor.getPrioridad()) {
-                // Intercambiar los valores de los nodos si la prioridad de i es mayor que la de j
-                Proceso temp = i->valor;
-                i->valor = j->valor;
-                j->valor = temp;
+    bool huboIntercambio;
+
+    // Implementación del algoritmo de burbuja
+    do {
+        huboIntercambio = false;
+        pnodoCola actual = primero;
+
+        while (actual != NULL && actual->siguiente != NULL) {
+            if (actual->valor.getPrioridad() > actual->siguiente->valor.getPrioridad()) {
+                // Intercambiar los valores de los nodos si la prioridad de "actual" es mayor que la de "siguiente"
+                Proceso temp = actual->valor;
+                actual->valor = actual->siguiente->valor;
+                actual->siguiente->valor = temp;
+
+                huboIntercambio = true;  // Indicar que hubo al menos un intercambio en este ciclo
             }
+            actual = actual->siguiente;  // Avanzar al siguiente nodo
         }
-    }
+    } while (huboIntercambio);  // Repetir hasta que no haya intercambios
 }
 
-/*void Cola::encolarProcesoNormal(Cola& c){
-    pnodoCola aux = ultimo;
-    while(aux){
-        if(!aux->valor.getTipo()){
-			c.encolar(aux->valor);			
-		}		
-        aux = aux->siguiente;
-    }
-    cout << endl;
-}*/
+
 
 int Cola::getLongitud(){
     return this->longitud;
@@ -68,13 +68,15 @@ Proceso Cola::eliminar(){
 	pnodoCola nodo;
     Proceso v;
 	nodo = primero;
-	if(!nodo)
+	if(!nodo){
 		return Proceso();
+	}
 		primero = nodo -> siguiente;
 		v = nodo -> valor;
 		delete nodo;
-		if(!primero)
+		if(!primero){
 			ultimo = NULL;
+		}
 		longitud--;
 		return v;
 	

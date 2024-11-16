@@ -5,6 +5,9 @@
 
 int Proceso::n=300;
 int Proceso::cadenaPID[12] = {};
+int Proceso::cadenaPrioridadNormal[39] = {};
+int Proceso::cadenaPrioridadTiempoReal[99] = {};
+
 
 Proceso::Proceso(){
 	int pid = 0;
@@ -22,6 +25,23 @@ int Proceso::generarPID(){
 	n+=12;
     return 0;
 }
+
+int Proceso::generarPrioridadNormal(){
+	for (int i=0; i<39; i++){
+		cadenaPrioridadNormal[i]= (i-19)+120;
+	}
+	random_shuffle(cadenaPrioridadNormal,cadenaPrioridadNormal+39);	
+    return 0;
+}
+
+int Proceso::generarPrioridadTiempoReal(){
+	for (int i=0; i<100; i++){
+		cadenaPrioridadTiempoReal[i]= i;
+	}
+	random_shuffle(cadenaPrioridadTiempoReal,cadenaPrioridadTiempoReal+100);
+    return 0;
+}
+
 void Proceso::setVacio(bool v){
     this->vacio = v;
 }

@@ -21,8 +21,13 @@ public:
 	void setPID(int n);
 	void mostrarEnTabla();
 	static int cadenaPID[12];
+	static int cadenaPrioridadNormal[39];
+	static int cadenaPrioridadTiempoReal[99];
 	static int n;
 	int generarPID();
+	int generarPrioridadNormal();
+	int generarPrioridadTiempoReal();
+
 private:
     bool tipo;
     int PID;
