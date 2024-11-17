@@ -6,8 +6,6 @@
 using namespace std;
 
 class Lista {
-private:
-    NodoLista* cabeza;
 
 public:
     // Constructor
@@ -51,7 +49,7 @@ public:
 private:
 	int longitud;
 	pnodoLista ultimo;
-	int primero;
+	pnodoLista primero;
 };
 
 #endif // LISTA_H

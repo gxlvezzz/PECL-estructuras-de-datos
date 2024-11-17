@@ -8,23 +8,23 @@ using namespace std;
 // Constructor
 Lista::Lista() {
     longitud=0;
-	ultimo=NULL;
+	primero=ultimo=nullptr;
 }
 
 	
 	
-/*
+
 
 // Método para mostrar los procesos normales en formato tabla
 void Lista::muestraProcesos()  {
    if(longitud==0){
-		cout << "Esta cola se encuentra vacia." << endl;
+		return;
 	}else{
 		cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
     cout << "---------------------------------------------------" << endl; // Línea de separación
-    pnodoLista aux = ultimo;
-    while(aux){
-        aux->valor.mostrarEnTabla();
+    pnodoLista aux = primero;
+    while(aux!=nullptr){
+        aux->valor->mostrarEnTabla();
         aux = aux->siguiente;
     }
     cout << endl;
@@ -32,7 +32,7 @@ void Lista::muestraProcesos()  {
 
     
 }
-
+/*
 
 void Lista::ordenarListaPorPrioridad() {
     if (longitud < 2) return; // 
@@ -104,16 +104,34 @@ Proceso* Lista::buscarProcesosPID(int pid, bool imprimir) {
     }
     return nullptr; 
 }
+*/
 
+void Lista::enlistar(Proceso v) {
+    // Crear un nuevo nodo y un nuevo Proceso dinámicamente
+    pnodoLista nuevo = new NodoLista(new Proceso(v)); 
 
-void Lista::enlistar(Proceso v){
-	pnodoLista nuevo;
-    nuevo = new NodoLista(v,siguiente,anterior);
-	nuevo->valor.setEstado(true);
+    // Inicializar los punteros del nodo
+    nuevo->siguiente = nullptr; 
+    nuevo->anterior = ultimo;  // Apuntar al nodo anterior (el último actual)
+
+    // Actualizar el estado del proceso almacenado en el nodo
+    nuevo->valor->setEstado(true);
+
+    // Si la lista estaba vacía, este será el primer nodo
+    if (longitud == 0) {
+        primero = nuevo; // Actualizar el inicio de la lista
+    } else {
+        ultimo->siguiente = nuevo; // Actualizar el siguiente del último nodo actual
+    }
+
+    // Actualizar el puntero `ultimo` al nuevo nodo
     ultimo = nuevo;
-    longitud++;	
+
+    // Incrementar la longitud de la lista
+    longitud++;
 }
 
+/*
 Proceso Lista::extraer(int pid){
     if (!ultimo) return Proceso();
 
@@ -139,14 +157,14 @@ Proceso Lista::extraer(int pid){
 }
 
 
-
+*/
 
 
 int Lista::getLongitud(){
     return this->longitud;
 }
 
-*/
+
 
 // Destructor
 Lista::~Lista() {

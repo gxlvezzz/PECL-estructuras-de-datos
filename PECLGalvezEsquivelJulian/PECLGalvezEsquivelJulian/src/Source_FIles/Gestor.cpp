@@ -121,7 +121,7 @@ void Gestor::borraProcesosColas(){
 	colaGPU2.~Cola();
 	colaGPU3.~Cola();
 }
-/*
+
 void Gestor::muestraProcesosNormal() {
     listaNormal.muestraProcesos(); // Llama directamente a la función de Lista
 }
@@ -129,7 +129,7 @@ void Gestor::muestraProcesosNormal() {
 void Gestor::muestraProcesosTiempoReal() {
     listaTiempoReal.muestraProcesos(); // Llama directamente a la función de Lista
 }
-	
+/*	
 void Gestor::buscarProcesos() {
 	
     listaNormal.obtenerMayorPrioridad();
@@ -225,7 +225,7 @@ void Gestor::cambiarPrioridadProcesoPorPID() {
     procesoEncontrado->mostrarEnTabla();
 }
 
-
+*/
 void Gestor::reiniciar() {
         
         pila.~Pila();
@@ -241,7 +241,7 @@ void Gestor::reiniciar() {
 	
 void Gestor::enlistarProcesos(){
 	while (cola.getLongitud()!=0){
-	proceso = cola.cima();
+	proceso = cola.verPrimero();
 	lista.enlistar(proceso);
 	if(proceso.getTipo()==false){
 		
@@ -251,7 +251,7 @@ void Gestor::enlistarProcesos(){
 		
 		listaTiempoReal.enlistar(proceso);
 	}
-	cola.extraer();
+	cola.eliminar();
 	}
 	colaGPU0.~Cola();
 	colaGPU1.~Cola();
@@ -267,7 +267,7 @@ int Gestor::ProcesosEnListaTiempoReal(){
 	return listaTiempoReal.getLongitud();
 }
 
-*/
+
 Gestor::Gestor(){
 		
 }
