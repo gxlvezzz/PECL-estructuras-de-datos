@@ -1,4 +1,4 @@
- #include <src/Header_Files/Gestor.hpp>
+#include <src/Header_Files/Gestor.hpp>
 #include <iostream>
 using namespace std;
 
@@ -61,7 +61,7 @@ int main(int argc, char** argv)
 		cout << "\tIndique la opcion deseada: ";
 		cin >> opcion;
 		opcion = toupper(opcion);
-		// system("clear");
+		system("clear");
 		system("cls");
 
 		switch(opcion) {
@@ -97,7 +97,7 @@ int main(int argc, char** argv)
 			 gestor.muestraProcesosTiempoReal();
 			break;
 		case 'K':
-			 //gestor.buscarProcesos();
+			 gestor.buscarProcesos();
 			break;
 		case 'L':
 			 //gestor.buscarProcesoPorNombreUsuario();
@@ -109,7 +109,7 @@ int main(int argc, char** argv)
 			 //gestor.cambiarPrioridadProcesoPorPID();
 			break;
 		case 'O':
-			 //gestor.reiniciar();
+			 gestor.reiniciar();
 			break;
 		case 'P':
 			//...;

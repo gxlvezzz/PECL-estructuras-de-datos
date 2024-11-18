@@ -29,8 +29,8 @@ class Gestor{
         void enlistarProcesos();
 		void muestraProcesosNormal();
         void muestraProcesosTiempoReal(); 
-       /* void buscarProcesos();
-        void buscarProcesoPorNombreUsuario();
+        void buscarProcesos();
+     /* void buscarProcesoPorNombreUsuario();
         void eliminarProcesoPorPID();
 		void eliminarProcesoPorPID(int pid);
 		void cambiarPrioridadProcesoPorPID(); */

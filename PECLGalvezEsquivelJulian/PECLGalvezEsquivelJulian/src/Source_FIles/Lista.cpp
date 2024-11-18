@@ -48,30 +48,16 @@ void Lista::ordenarListaPorPrioridad() {
         }
     }
 }
-
+*/
 Proceso Lista::obtenerMenorPrioridad() {
-    ordenarListaPorPrioridad();
-	if (longitud < 1) {
-        Proceso p;
-        p.setVacio(1);  
-        return p;
-    }
-    return ultimo->valor;
+    return getPrimero();
 }
 
 Proceso Lista::obtenerMayorPrioridad() {
-	ordenarListaPorPrioridad();
-    if (longitud < 1) {
-        Proceso p;
-        p.setVacio(1);  
-    }
-    pnodoLista nodo = ultimo;
-    while (nodo->siguiente != NULL) {
-        nodo = nodo->siguiente;
-    }
-    return nodo->valor;
-}
 
+    return getUltimo();
+}
+/*
 void Lista::buscarProcesosUsuario(string user){
     if(longitud < 1){
         return;
@@ -158,6 +144,14 @@ Proceso Lista::extraer(int pid){
 
 
 */
+
+Proceso Lista::getPrimero() {
+    return *(this->primero->valor); // Retorna una copia del objeto
+}
+
+Proceso Lista::getUltimo() {
+    return *(this->ultimo->valor); // Retorna una copia del objeto
+}
 
 
 int Lista::getLongitud(){

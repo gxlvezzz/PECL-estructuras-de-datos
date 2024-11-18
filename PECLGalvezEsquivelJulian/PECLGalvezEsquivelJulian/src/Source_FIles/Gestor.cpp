@@ -129,13 +129,8 @@ void Gestor::muestraProcesosNormal() {
 void Gestor::muestraProcesosTiempoReal() {
     listaTiempoReal.muestraProcesos(); // Llama directamente a la función de Lista
 }
-/*	
-void Gestor::buscarProcesos() {
 	
-    listaNormal.obtenerMayorPrioridad();
-    listaTiempoReal.obtenerMenorPrioridad();
-
-
+void Gestor::buscarProcesos() {
     Proceso procesoMenorNormal = listaNormal.obtenerMenorPrioridad();
 
 
@@ -158,7 +153,7 @@ void Gestor::buscarProcesos() {
          << " y su prioridad es: " << procesoMayorTiempoReal.getPrioridad() << endl;
 }
 
-
+/*
 void Gestor::buscarProcesoPorNombreUsuario(){
     string o;
     cout << "\tIntroduce un nombre de usuario: ";

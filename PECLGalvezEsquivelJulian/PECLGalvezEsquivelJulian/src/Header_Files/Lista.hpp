@@ -43,7 +43,8 @@ public:
 
 	
 	Proceso* buscarProcesosPID(int pid, bool b);
-	
+	Proceso getPrimero();
+	Proceso getUltimo();
 	int getLongitud();
 	
 private:

@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian.workspace">
-  <int Value="3" Name="m_selectedTab"/>
+  <int Value="2" Name="m_selectedTab"/>
   <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Source_Files\Cola.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="50" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Source_Files\Gestor.cpp" Name="FileName"/>
-      <int Value="42" Name="FirstVisibleLine"/>
-      <int Value="57" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\main.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="1" Name="CurrentLine"/>
-      <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
-    </TabInfo>
-    <TabInfo>
-      <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Source_Files\Lista.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
       <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
+      <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Source_Files\Gestor.cpp" Name="FileName"/>
+      <int Value="232" Name="FirstVisibleLine"/>
+      <int Value="132" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\main.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="63" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Source_Files\Lista.cpp" Name="FileName"/>
+      <int Value="134" Name="FirstVisibleLine"/>
+      <int Value="154" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
       <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Source_Files\Proceso.cpp" Name="FileName"/>
-      <int Value="48" Name="FirstVisibleLine"/>
-      <int Value="32" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="19" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
@@ -76,14 +76,14 @@
     <TabInfo>
       <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Header_Files\Proceso.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="9" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Header_Files\Lista.hpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="27" Name="FirstVisibleLine"/>
+      <int Value="52" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
@@ -117,8 +117,8 @@
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Source_Files\Arbol.cpp" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="9" Name="FirstVisibleLine"/>
+      <int Value="89" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
@@ -131,8 +131,22 @@
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Header_Files\Gestor.hpp" Name="FileName"/>
+      <int Value="15" Name="FirstVisibleLine"/>
+      <int Value="32" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Header_Files\Arbol.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="0" Name="CurrentLine"/>
+      <int Value="26" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\julia_ntxs1ki\OneDrive\Desktop\proyectos\PECL-estructuras-de-datos\PECLGalvezEsquivelJulian\PECLGalvezEsquivelJulian\src\Header_Files\NodoArbol.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="18" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
