@@ -163,6 +163,7 @@ void Gestor::buscarProcesoPorNombreUsuario(){
     lista.buscarProcesosUsuario(o);
 	
 }
+*/
 void Gestor::eliminarProcesoPorPID() {
 	cout << "\tIntroduce un PID: ";
 	int pid;
@@ -177,11 +178,11 @@ void Gestor::eliminarProcesoPorPID() {
 	}
 	Proceso procesoeliminado = lista.extraer(pid);
 	pila.insertar(procesoeliminado);
-	procesoeliminado.mostrarEnTabla();
+	//procesoeliminado.mostrarEnTabla();
 	procesoeliminado.mostrar(true);
 	
 }
-
+/*
 void Gestor::cambiarPrioridadProcesoPorPID() {
     cout << "\tIntroduce un PID: ";
     int pid;

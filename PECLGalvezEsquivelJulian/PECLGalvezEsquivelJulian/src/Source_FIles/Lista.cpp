@@ -73,24 +73,24 @@ void Lista::buscarProcesosUsuario(string user){
     }
 	}
 }
-
+*/
 Proceso* Lista::buscarProcesosPID(int pid, bool imprimir) {
     if (longitud < 1) {
         return nullptr;
     }
-    pnodoLista aux = ultimo;
+    pnodoLista aux = primero;
     while (aux != NULL) {
-        if (aux->valor.getPID() == pid) {
+        if (aux->valor->getPID() == pid) {
             if (imprimir) {
-                aux->valor.mostrarEnTabla();  
+                aux->valor->mostrarEnTabla();  
             }
-            return &(aux->valor);  
+            return (aux->valor);  
         }
         aux = aux->siguiente;
     }
     return nullptr; 
 }
-*/
+
 
 void Lista::enlistar(Proceso v) {
     // Crear un nuevo nodo y un nuevo Proceso dinámicamente
@@ -117,21 +117,21 @@ void Lista::enlistar(Proceso v) {
     longitud++;
 }
 
-/*
+
 Proceso Lista::extraer(int pid){
     if (!ultimo) return Proceso();
 
-    pnodoLista nodo = ultimo;
+    pnodoLista nodo = primero;
     pnodoLista anterior = nullptr;
 
-    while (nodo->valor.getPID() != pid) {
+    while (nodo->valor->getPID() != pid) {
         anterior = nodo;
         nodo = nodo->siguiente;
     }
     if (!nodo) return Proceso();
-	Proceso procesoEliminado = nodo->valor;
-    if (nodo == ultimo) {
-        ultimo = nodo->siguiente;
+	Proceso procesoEliminado = *(nodo->valor);
+    if (nodo == primero) {
+        primero = nodo->siguiente;
     } else {
 
         anterior->siguiente = nodo->siguiente;
@@ -143,7 +143,7 @@ Proceso Lista::extraer(int pid){
 }
 
 
-*/
+
 
 Proceso Lista::getPrimero() {
     return *(this->primero->valor); // Retorna una copia del objeto
