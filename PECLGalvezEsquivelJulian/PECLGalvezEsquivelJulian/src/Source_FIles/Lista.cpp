@@ -20,8 +20,8 @@ void Lista::muestraProcesos()  {
    if(longitud==0){
 		return;
 	}else{
-		cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
-    cout << "---------------------------------------------------" << endl; // Línea de separación
+		cout << "PID\tUsuario\t\tTipo\t\tEstado\t\tPrioridad" << endl;
+    cout << "-----------------------------------------------------------------" << endl; // Línea de separación
     pnodoLista aux = primero;
     while(aux!=nullptr){
         aux->valor->mostrarEnTabla();
@@ -32,48 +32,59 @@ void Lista::muestraProcesos()  {
 
     
 }
-/*
+
 
 void Lista::ordenarListaPorPrioridad() {
-    if (longitud < 2) return; // 
+    if (longitud < 2) return; // No hay necesidad de ordenar si la lista tiene menos de 2 elementos
 
-    for (pnodoLista i = ultimo; i != NULL; i = i->siguiente) {
-        for (pnodoLista j = i->siguiente; j != NULL; j = j->siguiente) {
-            if (i->valor.getPrioridad() > j->valor.getPrioridad()) {
-                // Intercambiar los valores de los nodos si la prioridad de i es mayor que la de j
-                Proceso temp = i->valor;
+    pnodoLista i, j;
+
+    // Ordenamiento tipo burbuja, iterando sobre los nodos de la lista
+    for (i = primero; i != nullptr; i = i->siguiente) {
+        for (j = i->siguiente; j != nullptr; j = j->siguiente) {
+            if (i->valor->getPrioridad() > j->valor->getPrioridad()) {
+                // Intercambiar los valores de los nodos
+                Proceso* temp = i->valor;
                 i->valor = j->valor;
                 j->valor = temp;
             }
         }
     }
 }
-*/
+
+
 Proceso Lista::obtenerMenorPrioridad() {
+	ordenarListaPorPrioridad();
     return getPrimero();
 }
 
 Proceso Lista::obtenerMayorPrioridad() {
-
+	ordenarListaPorPrioridad();
     return getUltimo();
 }
-/*
+
 void Lista::buscarProcesosUsuario(string user){
-    if(longitud < 1){
+     if (longitud < 1) {
+        cout << "No hay procesos en esta lista." << endl;
         return;
-	}
-    pnodoLista aux = ultimo;
-    while(aux != NULL){
-        if(aux->valor.getUsuario() == user){
-            aux->valor.mostrarEnTabla();
-			 aux = aux->siguiente;
-        
-	 }else{ 
-		 aux = aux->siguiente;
     }
-	}
+
+    bool encontrado = false; // Variable para verificar si se encuentran procesos
+    pnodoLista aux = primero;
+
+    while (aux != nullptr) {
+        if (aux->valor->getUsuario() == user) {
+            aux->valor->mostrarEnTabla(); // Mostrar el proceso en formato tabla
+            encontrado = true;
+        }
+        aux = aux->siguiente;
+    }
+
+    if (!encontrado) {
+        cout << "No se encontraron procesos para el usuario \"" << user << "\" en esta lista." << endl;
+    }
 }
-*/
+
 Proceso* Lista::buscarProcesosPID(int pid, bool imprimir) {
     if (longitud < 1) {
         return nullptr;

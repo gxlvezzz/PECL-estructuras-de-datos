@@ -30,10 +30,10 @@ class Gestor{
 		void muestraProcesosNormal();
         void muestraProcesosTiempoReal(); 
         void buscarProcesos();
-     // void buscarProcesoPorNombreUsuario();
+        void buscarProcesoPorNombreUsuario();
         void eliminarProcesoPorPID();
-		/*void eliminarProcesoPorPID(int pid);
-		void cambiarPrioridadProcesoPorPID(); */
+		//void eliminarProcesoPorPID(int pid);
+		void cambiarPrioridadProcesoPorPID(); 
         void reiniciar();
         
     private:

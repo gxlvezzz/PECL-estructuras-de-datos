@@ -1,7 +1,7 @@
 #include "src/Header_Files/Proceso.hpp"
 #include "src/Header_Files/Pila.hpp"
 #include <algorithm>
-
+#include <iomanip>
 
 int Proceso::n=300;
 int Proceso::cadenaPID[12] = {};
@@ -107,34 +107,16 @@ void Proceso::setPID(int a){
 }
 
 void Proceso::mostrarEnTabla(){
-	string Tipo;
-	string e ;
-	if(!tipo){
-        Tipo = "normal";
-    }else{
-        Tipo = "tiempo real";
-    }
-    
-    if(true){
-        e = "parado";
-        if(estado){
-            e = "ejecucion";
-        }
-    }
+	string Tipo = (tipo == 0) ? "normal" : "tiempo real";
+    string estado = (this->estado == true) ? "ejecucion" : "parado";
 
-	cout << PID << "\t";
-    cout << usuario << "\t";
-
-    cout << Tipo << "\t";
-
-    cout << e;
-    if (e == "parado"){
-		cout << "\t\t";
-	}else{
-		cout << "\t";
-	}
-
-    cout << prioridad << endl;
+    // Alineación y espacio para cada columna
+    cout << setw(3) << PID        // Ancho de 8 para PID
+         << setw(10) << usuario   // Ancho de 12 para el nombre del usuario
+         << setw(17) << Tipo      // Ancho de 15 para el tipo
+         << setw(19) << estado    // Ancho de 12 para el estado
+         << setw(10) << prioridad // Ancho de 10 para la prioridad
+         << endl;
 }
 
 Proceso::~Proceso()

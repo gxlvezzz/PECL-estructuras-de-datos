@@ -153,17 +153,19 @@ void Gestor::buscarProcesos() {
          << " y su prioridad es: " << procesoMayorTiempoReal.getPrioridad() << endl;
 }
 
-/*
+
 void Gestor::buscarProcesoPorNombreUsuario(){
     string o;
+
     cout << "\tIntroduce un nombre de usuario: ";
     cin >> o;
     cout << "PID\tUsuario\t\tTipo\t\tEstado\t\tPrioridad" << endl;
-	
+    cout << "-----------------------------------------------------------------" << endl;
     lista.buscarProcesosUsuario(o);
-	
+
+
 }
-*/
+
 void Gestor::eliminarProcesoPorPID() {
 	cout << "\tIntroduce un PID: ";
 	int pid;
@@ -182,7 +184,7 @@ void Gestor::eliminarProcesoPorPID() {
 	procesoeliminado.mostrar(true);
 	
 }
-/*
+
 void Gestor::cambiarPrioridadProcesoPorPID() {
     cout << "\tIntroduce un PID: ";
     int pid;
@@ -194,7 +196,7 @@ void Gestor::cambiarPrioridadProcesoPorPID() {
         return;
     }
 
-    cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
+    cout << "PID\tUsuario\t\tTipo\t\tEstado\t\tPrioridad" << endl;
     procesoEncontrado->mostrarEnTabla();
 
     bool esTiempoReal = procesoEncontrado->getTipo();
@@ -217,11 +219,11 @@ void Gestor::cambiarPrioridadProcesoPorPID() {
         listaNormal.enlistar(*procesoEncontrado);  
     }
 	
-	cout << "PID\tUsuario\tTipo\t\tEstado\t\tPrioridad" << endl;
+	cout << "PID\tUsuario\t\tTipo\t\tEstado\t\tPrioridad" << endl;
     procesoEncontrado->mostrarEnTabla();
 }
 
-*/
+
 void Gestor::reiniciar() {
         
         pila.~Pila();
