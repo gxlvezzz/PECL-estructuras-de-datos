@@ -46,6 +46,7 @@ public:
 	Proceso getPrimero();
 	Proceso getUltimo();
 	int getLongitud();
+	void insertarOrdenado(Proceso& proceso);
 	
 private:
 	int longitud;

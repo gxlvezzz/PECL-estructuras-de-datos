@@ -77,6 +77,7 @@ void Gestor::encolarProcesos(){
 		colaGPU3.ordenarPorPrioridad();
 		}}
 	cola.insertar(proceso);
+	cola.ordenarPorPrioridad();	
 	pila.extraer();
 	}
 }
@@ -180,7 +181,6 @@ void Gestor::eliminarProcesoPorPID() {
 	}
 	Proceso procesoeliminado = lista.extraer(pid);
 	pila.insertar(procesoeliminado);
-	//procesoeliminado.mostrarEnTabla();
 	procesoeliminado.mostrar(true);
 	
 }
@@ -190,38 +190,54 @@ void Gestor::cambiarPrioridadProcesoPorPID() {
     int pid;
     cin >> pid;
 
-    Proceso* procesoEncontrado = lista.buscarProcesosPID(pid, false); 
-    if (procesoEncontrado == nullptr) {  
+    // Buscar el proceso en la lista principal
+    Proceso* procesoEncontrado = lista.buscarProcesosPID(pid, false);
+    if (procesoEncontrado == nullptr) {
         cout << "No se encontró el proceso con el PID especificado." << endl;
         return;
     }
 
+    // Mostrar la información actual del proceso
     cout << "PID\tUsuario\t\tTipo\t\tEstado\t\tPrioridad" << endl;
     procesoEncontrado->mostrarEnTabla();
 
+    // Solicitar nueva prioridad
+    cout << "\tIntroduce una nueva prioridad: ";
+    int nuevaPrioridad;
+    cin >> nuevaPrioridad;
+
+    // Determinar el tipo de proceso (Normal o Tiempo Real)
     bool esTiempoReal = procesoEncontrado->getTipo();
 
+    // Eliminar el proceso de las listas específicas
     if (esTiempoReal) {
         listaTiempoReal.extraer(pid);
     } else {
         listaNormal.extraer(pid);
     }
+    // Eliminar el proceso de la lista general
+    lista.extraer(pid);
 
-    cout << "\tIntroduce una nueva prioridad: ";
-    int nuevaPrioridad;
-    cin >> nuevaPrioridad;
-
+    // Actualizar la prioridad del proceso
     procesoEncontrado->setPrioridad(nuevaPrioridad);
 
+    // Insertar nuevamente el proceso en las listas correspondientes
     if (esTiempoReal) {
-        listaTiempoReal.enlistar(*procesoEncontrado);  
+        listaTiempoReal.insertarOrdenado(*procesoEncontrado);
     } else {
-        listaNormal.enlistar(*procesoEncontrado);  
+        listaNormal.insertarOrdenado(*procesoEncontrado);
     }
-	
-	cout << "PID\tUsuario\t\tTipo\t\tEstado\t\tPrioridad" << endl;
+    lista.insertarOrdenado(*procesoEncontrado);
+
+    // Mostrar información actualizada
+    cout << "PID\tUsuario\t\tTipo\t\tEstado\t\tPrioridad (Actualizada)" << endl;
     procesoEncontrado->mostrarEnTabla();
 }
+
+
+
+
+
 
 
 void Gestor::reiniciar() {
@@ -237,25 +253,42 @@ void Gestor::reiniciar() {
         cout << "El programa ha sido reiniciado al estado inicial." << endl;
     }
 	
-void Gestor::enlistarProcesos(){
-	while (cola.getLongitud()!=0){
-	proceso = cola.verPrimero();
-	lista.enlistar(proceso);
-	if(proceso.getTipo()==false){
-		
-		listaNormal.enlistar(proceso);		
+void Gestor::enlistarProcesos() {
+    while (colaGPU2.getLongitud() > 0 || colaGPU3.getLongitud() > 0) {
+        if (colaGPU2.getLongitud() > 0 && 
+            (colaGPU3.getLongitud() == 0 || colaGPU2.verPrimero().getPrioridad() <= colaGPU3.verPrimero().getPrioridad())) {
+            // Extraer el proceso con menor prioridad de GPU2
+            Proceso procesoGPU2 = colaGPU2.verPrimero();
+            colaGPU2.eliminar();
+            lista.enlistar(procesoGPU2);
+            listaTiempoReal.enlistar(procesoGPU2);
+        } else if (colaGPU3.getLongitud() > 0) {
+            // Extraer el proceso con menor prioridad de GPU3
+            Proceso procesoGPU3 = colaGPU3.verPrimero();
+            colaGPU3.eliminar();
+            lista.enlistar(procesoGPU3);
+            listaTiempoReal.enlistar(procesoGPU3);
+        }
+    }
 	
-	}else{
-		
-		listaTiempoReal.enlistar(proceso);
-	}
-	cola.eliminar();
-	}
-	colaGPU0.~Cola();
-	colaGPU1.~Cola();
-	colaGPU2.~Cola();
-	colaGPU3.~Cola();
+	 while (colaGPU0.getLongitud() > 0 || colaGPU1.getLongitud() > 0) {
+        if (colaGPU0.getLongitud() > 0 && 
+            (colaGPU1.getLongitud() == 0 || colaGPU0.verPrimero().getPrioridad() <= colaGPU1.verPrimero().getPrioridad())) {
+            // Extraer el proceso con menor prioridad de GPU0
+            Proceso procesoGPU0 = colaGPU0.verPrimero();
+            colaGPU0.eliminar();
+            lista.enlistar(procesoGPU0);
+            listaNormal.enlistar(procesoGPU0);
+        } else if (colaGPU1.getLongitud() > 0) {
+            // Extraer el proceso con menor prioridad de GPU1
+            Proceso procesoGPU1 = colaGPU1.verPrimero();
+            colaGPU1.eliminar();
+            lista.enlistar(procesoGPU1);
+            listaNormal.enlistar(procesoGPU1);
+        }
+    }
 }
+
 	
 int Gestor::ProcesosEnListaNormal(){
 	return listaNormal.getLongitud();

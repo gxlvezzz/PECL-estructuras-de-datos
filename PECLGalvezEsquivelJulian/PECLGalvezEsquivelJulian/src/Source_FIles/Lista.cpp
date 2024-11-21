@@ -103,6 +103,7 @@ Proceso* Lista::buscarProcesosPID(int pid, bool imprimir) {
 }
 
 
+
 void Lista::enlistar(Proceso v) {
     // Crear un nuevo nodo y un nuevo Proceso dinámicamente
     pnodoLista nuevo = new NodoLista(new Proceso(v)); 
@@ -168,6 +169,59 @@ Proceso Lista::getUltimo() {
 int Lista::getLongitud(){
     return this->longitud;
 }
+
+void Lista::insertarOrdenado(Proceso& proceso) {
+    pnodoLista nuevo = new NodoLista(new Proceso(proceso));
+
+    if (this->longitud == 0) {
+        // Caso especial: lista vacía
+        this->primero = this->ultimo = nuevo;
+    } else {
+        pnodoLista actual = this->primero;
+        pnodoLista anterior = nullptr;
+
+        // Encontrar la posición correcta para insertar
+        while (actual != nullptr && actual->valor->getPrioridad() < proceso.getPrioridad()) {
+            anterior = actual;
+            actual = actual->siguiente;
+        }
+
+        // Ajustar la prioridad si hay duplicados antes de insertar
+        if (actual != nullptr && actual->valor->getPrioridad() == proceso.getPrioridad()) {
+            proceso.setPrioridad(proceso.getPrioridad() + 1);
+        }
+
+        // Insertar el nuevo nodo en la posición correcta
+        if (anterior == nullptr) {
+            // Insertar al inicio
+            nuevo->siguiente = this->primero;
+            this->primero->anterior = nuevo;
+            this->primero = nuevo;
+        } else if (actual == nullptr) {
+            // Insertar al final
+            anterior->siguiente = nuevo;
+            nuevo->anterior = anterior;
+            this->ultimo = nuevo;
+        } else {
+            // Insertar en el medio
+            anterior->siguiente = nuevo;
+            nuevo->anterior = anterior;
+            nuevo->siguiente = actual;
+            actual->anterior = nuevo;
+        }
+
+        // Ajustar prioridades en cascada después de insertar
+        pnodoLista iterador = nuevo->siguiente;
+        while (iterador != nullptr && iterador->valor->getPrioridad() <= nuevo->valor->getPrioridad()) {
+            iterador->valor->setPrioridad(iterador->valor->getPrioridad() + 1);
+            iterador = iterador->siguiente;
+        }
+    }
+
+    this->longitud++;
+}
+
+
 
 
 
