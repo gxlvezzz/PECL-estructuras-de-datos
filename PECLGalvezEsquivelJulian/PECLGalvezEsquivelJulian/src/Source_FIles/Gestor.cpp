@@ -3,6 +3,7 @@
 #include <src/Header_Files/Proceso.hpp>
 #include <src/Header_Files/Lista.hpp>
 #include <src/Header_Files/Pila.hpp>
+#include <src/Header_Files/Arbol.hpp>
 
 using namespace std;
 
@@ -234,7 +235,14 @@ void Gestor::cambiarPrioridadProcesoPorPID() {
     procesoEncontrado->mostrarEnTabla();
 }
 
+void Gestor::mostrarProcesosNormalesPrioridadMayor() {
+	 listaNormal.ordenarListaProcesosPrioridadMayor();
+}
 
+void Gestor::mostrarProcesosTiempoRealPrioridadMayor() {
+     listaTiempoReal.ordenarListaProcesosPrioridadMayor();
+    
+}
 
 
 
@@ -297,6 +305,8 @@ int Gestor::ProcesosEnListaNormal(){
 int Gestor::ProcesosEnListaTiempoReal(){
 	return listaTiempoReal.getLongitud();
 }
+
+
 
 
 Gestor::Gestor(){

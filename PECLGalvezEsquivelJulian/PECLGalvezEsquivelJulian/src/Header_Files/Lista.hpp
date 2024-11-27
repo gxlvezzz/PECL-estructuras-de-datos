@@ -38,9 +38,9 @@ public:
 	
 	//Metodo para encontrar y eliminar un proceso 
 	void buscarYEliminarProceso(int pid);
-	//Metodo para encontrar un proceso por PID
-	
-
+	//Metodo para ordenar lista de mayor a menor
+	void ordenarPorPrioridadMayor();
+	void ordenarListaProcesosPrioridadMayor();
 	
 	Proceso* buscarProcesosPID(int pid, bool b);
 	Proceso getPrimero();

@@ -35,7 +35,8 @@ class Gestor{
 		//void eliminarProcesoPorPID(int pid);
 		void cambiarPrioridadProcesoPorPID(); 
         void reiniciar();
-        
+		void mostrarProcesosNormalesPrioridadMayor();
+        void mostrarProcesosTiempoRealPrioridadMayor();
     private:
         
 };

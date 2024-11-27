@@ -115,10 +115,10 @@ int main(int argc, char** argv)
 			//...;
 			break;
 		case 'Q':
-			//...;
+			gestor.mostrarProcesosNormalesPrioridadMayor();
 			break;
 		case 'R':
-			//...;
+			gestor.mostrarProcesosTiempoRealPrioridadMayor();
 			break;
 		case 'T':
 			//...;

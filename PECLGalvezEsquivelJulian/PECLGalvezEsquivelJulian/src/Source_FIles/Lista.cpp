@@ -63,6 +63,42 @@ Proceso Lista::obtenerMayorPrioridad() {
     return getUltimo();
 }
 
+void Lista::ordenarPorPrioridadMayor() {
+     if (longitud < 2) return; // No hay necesidad de ordenar si la lista tiene menos de 2 elementos
+
+    pnodoLista i, j;
+
+    // Ordenamiento tipo burbuja, iterando sobre los nodos de la lista
+    for (i = primero; i != nullptr; i = i->siguiente) {
+        for (j = i->siguiente; j != nullptr; j = j->siguiente) {
+            // Cambiar la condición de comparación para ordenar de mayor a menor
+            if (i->valor->getPrioridad() < j->valor->getPrioridad()) {
+                // Intercambiar los valores de los nodos
+                Proceso* temp = i->valor;
+                i->valor = j->valor;
+                j->valor = temp;
+            }
+        }
+    }
+}
+
+void Lista::ordenarListaProcesosPrioridadMayor() {
+if (longitud < 2) return; 
+
+    ordenarPorPrioridadMayor();
+	pnodoLista actual = primero;
+    while (actual != nullptr) {
+        Proceso* proceso = actual->valor;
+        // Mostramos los detalles de cada proceso en formato de tabla
+        cout << "El proceso cuyo PID es " << proceso->getPID()
+             << ", es de tipo " << (proceso->getTipo() ? "tiempo real" : "normal")
+             << ", su estado es " << (proceso->getEstado() ? "ejecucion" : "parado")
+             << " y su prioridad es " << proceso->getPrioridad() << endl;
+        actual = actual->siguiente; // Avanzamos al siguiente nodo
+    }
+}
+
+
 void Lista::buscarProcesosUsuario(string user){
      if (longitud < 1) {
         cout << "No hay procesos en esta lista." << endl;
@@ -186,8 +222,8 @@ void Lista::insertarOrdenado(Proceso& proceso) {
             actual = actual->siguiente;
         }
 
-        // Ajustar la prioridad si hay duplicados antes de insertar
-        if (actual != nullptr && actual->valor->getPrioridad() == proceso.getPrioridad()) {
+        // Ajustar prioridades antes de insertar para evitar duplicados
+        while (actual != nullptr && actual->valor->getPrioridad() == proceso.getPrioridad()) {
             proceso.setPrioridad(proceso.getPrioridad() + 1);
         }
 
@@ -212,14 +248,18 @@ void Lista::insertarOrdenado(Proceso& proceso) {
 
         // Ajustar prioridades en cascada después de insertar
         pnodoLista iterador = nuevo->siguiente;
-        while (iterador != nullptr && iterador->valor->getPrioridad() <= nuevo->valor->getPrioridad()) {
-            iterador->valor->setPrioridad(iterador->valor->getPrioridad() + 1);
+        while (iterador != nullptr) {
+            if (iterador->valor->getPrioridad() <= nuevo->valor->getPrioridad()) {
+                iterador->valor->setPrioridad(nuevo->valor->getPrioridad() + 1);
+                nuevo = iterador; // Actualiza el nodo de referencia para la comparación
+            }
             iterador = iterador->siguiente;
         }
     }
 
     this->longitud++;
 }
+
 
 
 
