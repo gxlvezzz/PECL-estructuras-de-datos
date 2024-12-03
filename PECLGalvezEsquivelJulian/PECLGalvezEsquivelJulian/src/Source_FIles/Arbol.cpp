@@ -1,7 +1,13 @@
 #include <src/Header_Files/Arbol.hpp>
 
-Arbol::Arbol() { raiz = nullptr; }
-void Arbol::insertar(int val) { raiz = insertar(raiz, val); }
+Arbol::Arbol(){ 
+	raiz = nullptr; 
+	}
+	
+void Arbol::insertar(int val) { 
+	raiz = insertar(raiz, val); 
+	}
+	
 pnodoAbb Arbol::insertar(pnodoAbb nodo, int val)
 {
     if(!nodo)

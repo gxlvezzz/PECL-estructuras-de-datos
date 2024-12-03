@@ -37,6 +37,7 @@ class Gestor{
         void reiniciar();
 		void mostrarProcesosNormalesPrioridadMayor();
         void mostrarProcesosTiempoRealPrioridadMayor();
+		void crearYdibujarABB();
     private:
         
 };

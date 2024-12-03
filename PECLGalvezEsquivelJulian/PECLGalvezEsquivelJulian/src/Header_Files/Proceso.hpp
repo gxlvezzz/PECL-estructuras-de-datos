@@ -13,6 +13,7 @@ public:
     void setVacio(bool v);
     void crearProceso();
     bool getTipo();
+	void setTipo(bool t);
 	string getUsuario();
     bool getEstado();
     void setEstado(bool e);
@@ -22,8 +23,8 @@ public:
 	void setPID(int n);
 	void mostrarEnTabla();
 	static int cadenaPID[12];
-	static int cadenaPrioridadNormal[39];
-	static int cadenaPrioridadTiempoReal[99];
+	static int cadenaPrioridadNormal[40];
+	static int cadenaPrioridadTiempoReal[100];
 	static int n;
 	int generarPID();
 	int generarPrioridadNormal();

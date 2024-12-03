@@ -112,7 +112,7 @@ int main(int argc, char** argv)
 			 gestor.reiniciar();
 			break;
 		case 'P':
-			//...;
+			gestor.crearYdibujarABB();
 			break;
 		case 'Q':
 			gestor.mostrarProcesosNormalesPrioridadMayor();

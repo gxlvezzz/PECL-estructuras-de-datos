@@ -5,8 +5,8 @@
 
 int Proceso::n=300;
 int Proceso::cadenaPID[12] = {};
-int Proceso::cadenaPrioridadNormal[39] = {};
-int Proceso::cadenaPrioridadTiempoReal[99] = {};
+int Proceso::cadenaPrioridadNormal[40] = {};
+int Proceso::cadenaPrioridadTiempoReal[100] = {};
 
 
 Proceso::Proceso(){
@@ -27,7 +27,7 @@ int Proceso::generarPID(){
 }
 
 int Proceso::generarPrioridadNormal(){
-	for (int i=0; i<39; i++){
+	for (int i=0; i<40; i++){
 		cadenaPrioridadNormal[i]= (i-19)+120;
 	}
 	random_shuffle(cadenaPrioridadNormal,cadenaPrioridadNormal+39);	
@@ -76,6 +76,10 @@ void Proceso::mostrar(bool mostrartodo){
 
 bool Proceso::getTipo(){
     return this->tipo;
+}
+
+void Proceso::setTipo(bool t){
+    this->tipo = t;
 }
 
 string Proceso::getUsuario(){

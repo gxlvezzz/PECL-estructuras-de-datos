@@ -8,6 +8,8 @@
 using namespace std;
 
 	Pila pila;
+	Pila pilaNormal;
+	Pila pilaTiempoReal;
 	Proceso proceso;
 	Cola cola;
 	Cola colaGPU0;
@@ -17,20 +19,68 @@ using namespace std;
 	Lista listaNormal;
 	Lista listaTiempoReal;
 	Lista lista;
+	Arbol arbol;
 	
 	
 
 	
 void Gestor::genera12Procesos() {
-    Proceso procesoAuxiliar;  
+    // Generar datos estáticos
+    Proceso procesoAuxiliar;
     procesoAuxiliar.generarPID();
-	
+    procesoAuxiliar.generarPrioridadNormal();
+    procesoAuxiliar.generarPrioridadTiempoReal();
+
+    // Inicializar contadores y límites
+    static int procesosNormalesGenerados = 0;
+    static int procesosTiempoRealGenerados = 0;
+    const int limiteProcesosNormales = 100;
+    const int limiteProcesosTiempoReal = 38;
+
+    // Inicializar índices
+    int prioridadNormal = 0;
+    int prioridadTiempoReal = 0;
+
+    // Iterar para generar procesos
     for (int i = 0; i < 12; i++) {
-		proceso=Proceso();
-        proceso.setPID(Proceso::cadenaPID[i]);  // Asignar un PID único del arreglo mezclado
-        pila.insertar(proceso);   // Insertar el nuevo proceso en la pila
+        // Verificar límites
+        if (procesosNormalesGenerados >= limiteProcesosNormales &&
+            procesosTiempoRealGenerados >= limiteProcesosTiempoReal) {
+            break;
+        }
+
+        Proceso proceso; // Crear un nuevo proceso
+        proceso.setPID(Proceso::cadenaPID[i]); // Asignar un PID único
+
+        // Determinar el tipo de proceso respetando los límites
+        if (procesosNormalesGenerados >= limiteProcesosNormales) {
+            proceso.setTipo(true); // Forzar tipo tiempo real
+        } else if (procesosTiempoRealGenerados >= limiteProcesosTiempoReal) {
+            proceso.setTipo(false); // Forzar tipo normal
+        }
+
+        // Asignar prioridad según el tipo
+        int indice;
+        if (proceso.getTipo() == false) { // Proceso normal
+            indice = Proceso::cadenaPrioridadNormal[prioridadNormal];
+            proceso.setPrioridad(indice);
+            prioridadNormal++;
+            procesosNormalesGenerados++;
+        } else { // Proceso tiempo real
+            indice = Proceso::cadenaPrioridadTiempoReal[prioridadTiempoReal];
+            proceso.setPrioridad(indice);
+            prioridadTiempoReal++;
+            procesosTiempoRealGenerados++;
+        }
+
+        // Insertar proceso en la pila
+        pila.insertar(proceso);
     }
 }
+
+
+
+
 
 int Gestor::ProcesosEnPila(){
 	return pila.getLongitud();
@@ -43,47 +93,38 @@ void Gestor::borraProcesosPila(){
 	pila.~Pila();
 }
 
-void Gestor::encolarProcesos(){
-	Proceso procesoAuxiliar;
-	procesoAuxiliar.generarPrioridadNormal();
-	procesoAuxiliar.generarPrioridadTiempoReal();
-	int prioridadNormal=0;
-	int prioridadTiempoReal=0;
-	int indice = 0;
-
-	while (pila.getLongitud()!=0){
-	proceso = pila.cima();
-
-	if(proceso.getTipo()==false){
-		indice = Proceso::cadenaPrioridadNormal[prioridadNormal];
-		proceso.setPrioridad(indice);
-		prioridadNormal++;
-		if(colaGPU0.getLongitud() <= colaGPU1.getLongitud()){
-		colaGPU0.insertar(proceso);
-		colaGPU0.ordenarPorPrioridad();
-	}else if(colaGPU1.getLongitud() < colaGPU0.getLongitud()){
-		colaGPU1.insertar(proceso);
-		colaGPU1.ordenarPorPrioridad();	
-		}
-	
-	}else{
-		indice = Proceso::cadenaPrioridadTiempoReal[prioridadTiempoReal];
-		proceso.setPrioridad(indice);
-		prioridadTiempoReal++;
-		if(colaGPU2.getLongitud() <= colaGPU3.getLongitud()){
-		colaGPU2.insertar(proceso);
-		colaGPU2.ordenarPorPrioridad();
-	}else if(colaGPU3.getLongitud() < colaGPU2.getLongitud()){
-		colaGPU3.insertar(proceso);
-		colaGPU3.ordenarPorPrioridad();
-		}}
-	cola.insertar(proceso);
-	cola.ordenarPorPrioridad();	
-	pila.extraer();
-	}
+void Gestor::encolarProcesos() {
+    while (pila.getLongitud() != 0) {
+        // Obtener el proceso de la pila
+        proceso = pila.cima();
+        // Verificar el tipo del proceso
+        if (proceso.getTipo() == false) { // Proceso normal
+            // Insertar en la cola GPU correspondiente con menor longitud
+            if (colaGPU0.getLongitud() <= colaGPU1.getLongitud()) {
+                colaGPU0.insertar(proceso);
+            } else {
+                colaGPU1.insertar(proceso);
+            }
+        } else { // Proceso tiempo real
+            // Insertar en la cola GPU correspondiente con menor longitud
+            if (colaGPU2.getLongitud() <= colaGPU3.getLongitud()) {
+                colaGPU2.insertar(proceso);
+            } else {
+                colaGPU3.insertar(proceso);
+            }
+        }
+        // Insertar en la cola principal
+        cola.insertar(proceso);
+        // Extraer el proceso de la pila
+        pila.extraer();
+    }
+    // Ordenar las colas después de insertar todos los procesos
+    colaGPU0.ordenarPorPrioridad();
+    colaGPU1.ordenarPorPrioridad();
+    colaGPU2.ordenarPorPrioridad();
+    colaGPU3.ordenarPorPrioridad();
+    cola.ordenarPorPrioridad();
 }
-
-
 
 
 		
@@ -306,7 +347,15 @@ int Gestor::ProcesosEnListaTiempoReal(){
 	return listaTiempoReal.getLongitud();
 }
 
-
+void Gestor::crearYdibujarABB(){
+	arbol.insertar(100);
+	while (pila.getLongitud()!=0){
+		proceso=pila.cima();
+		pila.extraer();
+		arbol.insertar(proceso.getPrioridad());
+	}
+	arbol.dibujar();
+}
 
 
 Gestor::Gestor(){
