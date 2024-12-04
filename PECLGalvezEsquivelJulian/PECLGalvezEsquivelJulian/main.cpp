@@ -17,7 +17,7 @@ int main(int argc, char** argv)
 			 <<  gestor.ProcesosEnGPU3()
 			 << " \n\tProcesos en las listas:\n \t\tNormal-> "
 			 << gestor.ProcesosEnListaNormal() << "\tTiempo Real-> " << gestor.ProcesosEnListaTiempoReal()
-			 << "\n\tProcesos en el arbol -> " << 0							  /*gestor.ProcesosEnArbol()*/
+			 << "\n\tProcesos en el arbol -> " << gestor.ProcesosEnArbol()
 			 << "\n";
 		cout << "\t----------------------------------------------------------------"
 				"------\n\n";
@@ -121,7 +121,7 @@ int main(int argc, char** argv)
 			gestor.mostrarProcesosTiempoRealPrioridadMayor();
 			break;
 		case 'T':
-			//...;
+			gestor.mostrarProcesosEnArbol();
 			break;
 		case 'U':
 			//...;

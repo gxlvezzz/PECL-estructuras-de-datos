@@ -115,15 +115,15 @@ void Proceso::mostrarEnTabla(){
     string estado = (this->estado == true) ? "ejecucion" : "parado";
 
     // Alineación y espacio para cada columna
-    cout << setw(3) << PID        // Ancho de 8 para PID
-         << setw(10) << usuario   // Ancho de 12 para el nombre del usuario
-         << setw(17) << Tipo      // Ancho de 15 para el tipo
-         << setw(19) << estado    // Ancho de 12 para el estado
-         << setw(10) << prioridad // Ancho de 10 para la prioridad
+    cout << setw(3) << PID        
+         << setw(10) << usuario  
+         << setw(17) << Tipo      
+         << setw(19) << estado    
+         << setw(10) << prioridad 
          << endl;
 }
 
 Proceso::~Proceso()
 {
 }
-//Proceso.cpp
+//Proceso.cpp	

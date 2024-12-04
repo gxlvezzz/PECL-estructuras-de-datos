@@ -18,7 +18,7 @@ class Gestor{
         int ProcesosEnGPU3();  
         int ProcesosEnListaNormal();
         int ProcesosEnListaTiempoReal();
-        void ProcesosEnArbol();
+        int ProcesosEnArbol();
         void genera12Procesos();
         void muestraProcesos();
         void borraProcesosPila();
@@ -38,6 +38,7 @@ class Gestor{
 		void mostrarProcesosNormalesPrioridadMayor();
         void mostrarProcesosTiempoRealPrioridadMayor();
 		void crearYdibujarABB();
+		void mostrarProcesosEnArbol();
     private:
         
 };

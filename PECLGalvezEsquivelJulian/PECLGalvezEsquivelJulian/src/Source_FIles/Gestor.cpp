@@ -22,6 +22,7 @@ using namespace std;
 	Arbol arbol;
 	
 	
+	
 
 	
 void Gestor::genera12Procesos() {
@@ -346,15 +347,28 @@ int Gestor::ProcesosEnListaNormal(){
 int Gestor::ProcesosEnListaTiempoReal(){
 	return listaTiempoReal.getLongitud();
 }
+int Gestor::ProcesosEnArbol() {
+    return arbol.contarNodos();
+}
+void Gestor::crearYdibujarABB() {
+    // Inserta los procesos de la pila en el árbol
+    while (pila.getLongitud() != 0) {
+        // Obtener el proceso de la pila
+        Proceso procesoActual = pila.cima();
+        
+        // Insertar en el árbol usando la prioridad del proceso como valor entero
+        arbol.insertar(procesoActual.getPrioridad()); // Cambia esto a getPID() si lo prefieres
+        
+        // Extraer el proceso de la pila después de insertarlo en el árbol
+        pila.extraer();
+    }
 
-void Gestor::crearYdibujarABB(){
-	arbol.insertar(100);
-	while (pila.getLongitud()!=0){
-		proceso=pila.cima();
-		pila.extraer();
-		arbol.insertar(proceso.getPrioridad());
-	}
-	arbol.dibujar();
+    // Dibujar el árbol después de la inserción
+    arbol.dibujar();
+}
+
+void Gestor::mostrarProcesosEnArbol() {
+    arbol.mostrarProcesosEnInorden();
 }
 
 

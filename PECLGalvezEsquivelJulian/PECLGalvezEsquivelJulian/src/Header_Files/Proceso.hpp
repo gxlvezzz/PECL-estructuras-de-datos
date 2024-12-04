@@ -8,7 +8,7 @@ public:
     Proceso();
     ~Proceso();
 	void procesoVacio();
-    void mostrar(bool mostrartodo);
+    void mostrar(bool mostrartodo)const;
     bool getVacio();
     void setVacio(bool v);
     void crearProceso();
@@ -25,6 +25,7 @@ public:
 	static int cadenaPID[12];
 	static int cadenaPrioridadNormal[40];
 	static int cadenaPrioridadTiempoReal[100];
+	
 	static int n;
 	int generarPID();
 	int generarPrioridadNormal();

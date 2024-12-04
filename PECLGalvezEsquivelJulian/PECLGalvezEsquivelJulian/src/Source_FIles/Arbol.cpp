@@ -7,7 +7,14 @@ Arbol::Arbol(){
 void Arbol::insertar(int val) { 
 	raiz = insertar(raiz, val); 
 	}
-	
+	int Arbol::contarNodos(pnodoAbb nodo) {
+    if (!nodo) return 0;
+    return 1 + contarNodos(nodo->izq) + contarNodos(nodo->der);
+}
+
+int Arbol::contarNodos() {
+    return contarNodos(raiz);
+}
 pnodoAbb Arbol::insertar(pnodoAbb nodo, int val)
 {
     if(!nodo)
@@ -18,6 +25,27 @@ pnodoAbb Arbol::insertar(pnodoAbb nodo, int val)
         nodo->der = insertar(nodo->der, val);
     return nodo;
 }
+void Arbol::mostrarProcesosEnInorden() {
+    mostrarProcesosEnInorden(raiz);
+    cout << endl;
+}
+
+void Arbol::mostrarProcesosEnInorden(pnodoAbb nodo) {
+    if (!nodo)
+        return;
+
+    // Recorrer el subárbol izquierdo
+    mostrarProcesosEnInorden(nodo->izq);
+
+    // Mostrar el valor del nodo actual
+    cout << nodo->dato << " "; // Si el valor es un proceso, utiliza el método apropiado como nodo->dato.getPrioridad()
+
+    // Recorrer el subárbol derecho
+    mostrarProcesosEnInorden(nodo->der);
+}
+
+
+
 void Arbol::pintar()
 {
     pintar(raiz);
