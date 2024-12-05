@@ -5,6 +5,9 @@ using namespace std;
 int main(int argc, char** argv)
 {
 	Gestor gestor;
+	Proceso procesoAuxiliar;
+	procesoAuxiliar.generarPrioridadNormal();
+	procesoAuxiliar.generarPrioridadTiempoReal();
 	char opcion;
 
 	do {

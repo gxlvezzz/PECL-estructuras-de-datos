@@ -20,6 +20,10 @@ using namespace std;
 	Lista listaTiempoReal;
 	Lista lista;
 	Arbol arbol;
+	int indiceNormal = 0;
+	int indiceTiempoReal = 0;
+	Proceso procesoAuxiliar;
+
 	
 	
 	
@@ -29,51 +33,12 @@ void Gestor::genera12Procesos() {
     // Generar datos estáticos
     Proceso procesoAuxiliar;
     procesoAuxiliar.generarPID();
-    procesoAuxiliar.generarPrioridadNormal();
-    procesoAuxiliar.generarPrioridadTiempoReal();
-
-    // Inicializar contadores y límites
-    static int procesosNormalesGenerados = 0;
-    static int procesosTiempoRealGenerados = 0;
-    const int limiteProcesosNormales = 100;
-    const int limiteProcesosTiempoReal = 38;
-
-    // Inicializar índices
-    int prioridadNormal = 0;
-    int prioridadTiempoReal = 0;
-
+	
     // Iterar para generar procesos
     for (int i = 0; i < 12; i++) {
-        // Verificar límites
-        if (procesosNormalesGenerados >= limiteProcesosNormales &&
-            procesosTiempoRealGenerados >= limiteProcesosTiempoReal) {
-            break;
-        }
-
         Proceso proceso; // Crear un nuevo proceso
         proceso.setPID(Proceso::cadenaPID[i]); // Asignar un PID único
-
-        // Determinar el tipo de proceso respetando los límites
-        if (procesosNormalesGenerados >= limiteProcesosNormales) {
-            proceso.setTipo(true); // Forzar tipo tiempo real
-        } else if (procesosTiempoRealGenerados >= limiteProcesosTiempoReal) {
-            proceso.setTipo(false); // Forzar tipo normal
-        }
-
-        // Asignar prioridad según el tipo
-        int indice;
-        if (proceso.getTipo() == false) { // Proceso normal
-            indice = Proceso::cadenaPrioridadNormal[prioridadNormal];
-            proceso.setPrioridad(indice);
-            prioridadNormal++;
-            procesosNormalesGenerados++;
-        } else { // Proceso tiempo real
-            indice = Proceso::cadenaPrioridadTiempoReal[prioridadTiempoReal];
-            proceso.setPrioridad(indice);
-            prioridadTiempoReal++;
-            procesosTiempoRealGenerados++;
-        }
-
+		
         // Insertar proceso en la pila
         pila.insertar(proceso);
     }
@@ -95,11 +60,19 @@ void Gestor::borraProcesosPila(){
 }
 
 void Gestor::encolarProcesos() {
+	int indiceNormal = 0;
+	int indiceTiempoReal = 0;
+	Proceso procesoAuxiliar;
+	procesoAuxiliar.generarPrioridadNormal();
+	procesoAuxiliar.generarPrioridadTiempoReal();
+	
     while (pila.getLongitud() != 0) {
         // Obtener el proceso de la pila
         proceso = pila.cima();
         // Verificar el tipo del proceso
         if (proceso.getTipo() == false) { // Proceso normal
+			proceso.setPrioridad(Proceso::cadenaPrioridadNormal[indiceNormal]);
+			indiceNormal++;
             // Insertar en la cola GPU correspondiente con menor longitud
             if (colaGPU0.getLongitud() <= colaGPU1.getLongitud()) {
                 colaGPU0.insertar(proceso);
@@ -107,6 +80,8 @@ void Gestor::encolarProcesos() {
                 colaGPU1.insertar(proceso);
             }
         } else { // Proceso tiempo real
+			proceso.setPrioridad(Proceso::cadenaPrioridadTiempoReal[indiceTiempoReal]);
+			indiceTiempoReal++;
             // Insertar en la cola GPU correspondiente con menor longitud
             if (colaGPU2.getLongitud() <= colaGPU3.getLongitud()) {
                 colaGPU2.insertar(proceso);
@@ -224,7 +199,6 @@ void Gestor::eliminarProcesoPorPID() {
 	}
 	Proceso procesoeliminado = lista.extraer(pid);
 	pila.insertar(procesoeliminado);
-	procesoeliminado.mostrar(true);
 	
 }
 
@@ -351,13 +325,22 @@ int Gestor::ProcesosEnArbol() {
     return arbol.contarNodos();
 }
 void Gestor::crearYdibujarABB() {
+
     // Inserta los procesos de la pila en el árbol
     while (pila.getLongitud() != 0) {
         // Obtener el proceso de la pila
-        Proceso procesoActual = pila.cima();
+        Proceso proceso = pila.cima();
+		
+		if (proceso.getTipo() == false) { // Proceso normal
+			proceso.setPrioridad(Proceso::cadenaPrioridadNormal[indiceNormal]);
+			indiceNormal++;
+		} else { // Proceso tiempo real
+			proceso.setPrioridad(Proceso::cadenaPrioridadTiempoReal[indiceTiempoReal]);
+			indiceTiempoReal++;
+		}
         
         // Insertar en el árbol usando la prioridad del proceso como valor entero
-        arbol.insertar(procesoActual.getPrioridad()); // Cambia esto a getPID() si lo prefieres
+        arbol.insertar(proceso.getPrioridad()); // Cambia esto a getPID() si lo prefieres
         
         // Extraer el proceso de la pila después de insertarlo en el árbol
         pila.extraer();

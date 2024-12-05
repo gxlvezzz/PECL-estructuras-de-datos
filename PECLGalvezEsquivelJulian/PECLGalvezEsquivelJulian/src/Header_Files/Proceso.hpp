@@ -8,7 +8,7 @@ public:
     Proceso();
     ~Proceso();
 	void procesoVacio();
-    void mostrar(bool mostrartodo)const;
+    void mostrar(bool mostrartodo);
     bool getVacio();
     void setVacio(bool v);
     void crearProceso();

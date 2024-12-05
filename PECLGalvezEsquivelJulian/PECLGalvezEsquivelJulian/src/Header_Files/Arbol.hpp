@@ -11,7 +11,7 @@ class Arbol
 {
 public:
     Arbol();
-    void insertar(int val);
+    void insertar(Proceso val);
 	int  contarNodos(pnodoAbb nodo);
 	int  contarNodos();
 	void mostrarProcesosEnInorden();

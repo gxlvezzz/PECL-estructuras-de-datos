@@ -61,13 +61,11 @@ void Proceso::mostrar(bool mostrartodo){
     cout << "\tEl proceso cuyo PID es "<< PID << " es de tipo " << Tipo;
     
     if(mostrartodo){
-    if(true){
         string e = "parado";
         if(estado){
             e = "ejecucion";
         }
         cout << ", su estado es " << e << " y su prioridad es: " << prioridad;
-    }
 	}
     cout << endl;
 }

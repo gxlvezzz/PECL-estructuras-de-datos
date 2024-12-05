@@ -68,7 +68,7 @@ void Pila::mostrar(){
 	}else{
     pnodoPila aux = ultimo;
     while(aux){
-        aux->valor.mostrar(true);
+        aux->valor.mostrar(false);
         aux = aux->siguiente;
     }
     cout << endl;
