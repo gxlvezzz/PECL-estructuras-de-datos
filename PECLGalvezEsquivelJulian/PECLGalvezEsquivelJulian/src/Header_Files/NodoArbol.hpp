@@ -5,7 +5,7 @@
 class NodoArbol
 {
 public:
-    NodoArbol(int dato);
+    NodoArbol(Proceso dato);
     ~NodoArbol();
 
 private:

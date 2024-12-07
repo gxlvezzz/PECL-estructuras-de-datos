@@ -252,13 +252,13 @@ void Gestor::cambiarPrioridadProcesoPorPID() {
 }
 
 void Gestor::mostrarProcesosNormalesPrioridadMayor() {
-	 listaNormal.ordenarListaProcesosPrioridadMayor();
+    arbol.mostrarProcesosNormalesPrioridadMayor();
 }
 
 void Gestor::mostrarProcesosTiempoRealPrioridadMayor() {
-     listaTiempoReal.ordenarListaProcesosPrioridadMayor();
-    
+    arbol.mostrarProcesosTiempoRealPrioridadMayor();
 }
+
 
 
 
@@ -338,9 +338,8 @@ void Gestor::crearYdibujarABB() {
 			proceso.setPrioridad(Proceso::cadenaPrioridadTiempoReal[indiceTiempoReal]);
 			indiceTiempoReal++;
 		}
-        
         // Insertar en el árbol usando la prioridad del proceso como valor entero
-        arbol.insertar(proceso.getPrioridad()); // Cambia esto a getPID() si lo prefieres
+        arbol.insertar(proceso); // Cambia esto a getPID() si lo prefieres
         
         // Extraer el proceso de la pila después de insertarlo en el árbol
         pila.extraer();

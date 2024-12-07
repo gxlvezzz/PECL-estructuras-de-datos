@@ -1,5 +1,7 @@
 #include <src/Header_Files/Arbol.hpp>
 
+Proceso dato;
+
 Arbol::Arbol(){ 
 	raiz = nullptr; 
 	}
@@ -19,7 +21,7 @@ pnodoAbb Arbol::insertar(pnodoAbb nodo, Proceso val)
 {
     if(!nodo)
         return new NodoArbol(val);
-    if(val <= nodo->dato)
+    if(val.getPrioridad() <= nodo->dato.getPrioridad())
         nodo->izq = insertar(nodo->izq, val);
     else
         nodo->der = insertar(nodo->der, val);
@@ -38,7 +40,7 @@ void Arbol::mostrarProcesosEnInorden(pnodoAbb nodo) {
     mostrarProcesosEnInorden(nodo->izq);
 
     // Mostrar el valor del nodo actual
-    cout << nodo->dato.mostrar(true) << " "; // Si el valor es un proceso, utiliza el método apropiado como nodo->dato.getPrioridad()
+    nodo->dato.mostrar(true); // Si el valor es un proceso, utiliza el método apropiado como nodo->dato.getPrioridad()
 
     // Recorrer el subárbol derecho
     mostrarProcesosEnInorden(nodo->der);
@@ -56,7 +58,7 @@ void Arbol::pintar(pnodoAbb nodo)
     if(!nodo)
         return;
     pintar(nodo->izq);
-    cout << nodo->dato << " ";
+    nodo->dato.mostrar(false);
     pintar(nodo->der);
 }
 int Arbol::altura(pnodoAbb nodo)
@@ -92,7 +94,7 @@ void Arbol::dibujarNodo(vector<string>& output, vector<string>& linkAbove, pnodo
 
     if(nodo->izq) {
         int numeroQueQuieroImprimirEnElArbol =
-            nodo->izq->dato; // En vez de este valor, tenéis que coger el número de la habitación del paciente.
+            nodo->izq->dato.getPrioridad(); // En vez de este valor, tenéis que coger el número de la habitación del paciente.
         string izqdato = SP + to_string(numeroQueQuieroImprimirEnElArbol) + SP;
         dibujarNodo(output, linkAbove, nodo->izq, nivel + 1, p - izqdato.size(), 'L');
         p = max(p, (int)output[nivel + 1].size());
@@ -102,7 +104,7 @@ void Arbol::dibujarNodo(vector<string>& output, vector<string>& linkAbove, pnodo
     if(space > 0)
         output[nivel] += string(space, ' ');
     int numeroQueQuieroImprimirEnElArbol =
-        nodo->dato; // En vez de este valor, tenéis que coger el número de la habitación del paciente.
+        nodo->dato.getPrioridad(); // En vez de este valor, tenéis que coger el número de la habitación del paciente.
     string nododato = SP + to_string(numeroQueQuieroImprimirEnElArbol) + SP;
     output[nivel] += nododato;
 
@@ -151,5 +153,34 @@ void Arbol::dibujar()
     }
     cout << '\n' << '\n';
 }
+
+void Arbol::mostrarProcesosNormalesPrioridadMayor() {
+    mostrarProcesosNormales(raiz);
+}
+
+void Arbol::mostrarProcesosTiempoRealPrioridadMayor() {
+    mostrarProcesosTiempoReal(raiz);
+}
+
+// Función auxiliar para recorrer y mostrar los procesos normales
+void Arbol::mostrarProcesosNormales(pnodoAbb nodo) {
+    if (!nodo) return; // Base de la recursión
+    mostrarProcesosNormales(nodo->izq);
+    if (!nodo->dato.getTipo() && nodo->dato.getPrioridad() > 100) {
+        nodo->dato.mostrar(true);
+    }
+    mostrarProcesosNormales(nodo->der);
+}
+
+// Función auxiliar para recorrer y mostrar los procesos de tiempo real
+void Arbol::mostrarProcesosTiempoReal(pnodoAbb nodo) {
+    if (!nodo) return; // Base de la recursión
+    mostrarProcesosTiempoReal(nodo->izq);
+    if (nodo->dato.getTipo() && nodo->dato.getPrioridad() < 100) {
+        nodo->dato.mostrar(true); 
+    }
+    mostrarProcesosTiempoReal(nodo->der);
+}
+
 
 Arbol::~Arbol() {}
