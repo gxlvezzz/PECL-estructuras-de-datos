@@ -12,7 +12,6 @@ public:
     Lista();
 	~Lista();
 	
-	
 
     // Método para insertar un proceso en la lista
 	void enlistar(Proceso v);

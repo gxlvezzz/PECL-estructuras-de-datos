@@ -2,6 +2,7 @@
 #include "src/Header_Files/Proceso.hpp"
 #include "src/Header_Files/NodoLista.hpp"
 #include "src/Header_Files/Pila.hpp"
+#include "src/Header_Files/Arbol.hpp"
 #include <iostream>
 using namespace std;
 

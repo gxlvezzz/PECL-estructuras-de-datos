@@ -127,13 +127,13 @@ int main(int argc, char** argv)
 			gestor.mostrarProcesosEnArbol();
 			break;
 		case 'U':
-			//...;
+			gestor.mostrarProcesosNormalMenorTiempoRealMayor();
 			break;
 		case 'V':
-			//...;
+			gestor.mostrarProcesosNodosHojas();
 			break;
 		case 'W':
-			//...;
+			gestor.eliminarProcesoArbolPorPrioridad();
 			break;
 		case 'S':
 			cout << "Saliendo del programa...\n";

@@ -38,6 +38,9 @@ class Gestor{
         void mostrarProcesosTiempoRealPrioridadMayor();
 		void crearYdibujarABB();
 		void mostrarProcesosEnArbol();
+		void mostrarProcesosNormalMenorTiempoRealMayor();
+		void mostrarProcesosNodosHojas();
+		void eliminarProcesoArbolPorPrioridad();
     private:
         
 };
