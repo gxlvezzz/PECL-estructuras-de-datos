@@ -27,7 +27,7 @@ public:
 	void mostrarProcesoNormalMenorTiempoRealMayor();
 	void mostrarProcesosEnHojas();
 	void mostrarProcesosEnHojas(pnodoAbb nodo);
-	void eliminarProcesoPorPrioridad(int prioridad);
+	void eliminarProcesoPorPrioridad(int prioridad, Lista& listaNormal, Lista& listaTiempoReal);
 	
     ~Arbol();
 	
@@ -36,7 +36,7 @@ private:
 	
     pnodoAbb raiz;
     pnodoAbb insertar(pnodoAbb nodo, Proceso val);
-	pnodoAbb eliminarProceso(pnodoAbb nodo, int prioridad);
+	pnodoAbb eliminarProceso(pnodoAbb nodo, int prioridad, Proceso& eliminado);
 	pnodoAbb encontrarMin(pnodoAbb nodo);
 
     void pintar(pnodoAbb);

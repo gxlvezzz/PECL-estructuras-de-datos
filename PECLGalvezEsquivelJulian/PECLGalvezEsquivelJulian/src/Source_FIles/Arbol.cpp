@@ -255,36 +255,38 @@ void Arbol::mostrarProcesosEnHojas(pnodoAbb nodo) {
     mostrarProcesosEnHojas(nodo->der);
 }
 
-void Arbol::eliminarProcesoPorPrioridad(int prioridad) {
-    cout << "Arbol antes de eliminar el proceso con prioridad " << prioridad << ":" << endl;
+void Arbol::eliminarProcesoPorPrioridad(int prioridad, Lista& listaNormal, Lista& listaTiempoReal) {
+    cout << "Árbol antes de eliminar el proceso con prioridad " << prioridad << ":" << endl;
     dibujar(); // Mostrar el árbol antes de la eliminación
 
-    raiz = eliminarProceso(raiz, prioridad);
+    Proceso eliminado; // Variable para almacenar el proceso eliminado
+    raiz = eliminarProceso(raiz, prioridad, eliminado); // Llamamos a la función de eliminación
 
-    cout << "Arbol despues de eliminar el proceso con prioridad " << prioridad << ":" << endl;
+    // Insertar el proceso eliminado en la lista correspondiente
+    if (eliminado.getTipo()) { // Proceso de tiempo real
+        listaTiempoReal.insertarOrdenado(eliminado);
+    } else { // Proceso normal
+        listaNormal.insertarOrdenado(eliminado);
+    }
+
+    cout << "Árbol después de eliminar el proceso con prioridad " << prioridad << ":" << endl;
     dibujar(); // Mostrar el árbol después de la eliminación
 }
 
-pnodoAbb Arbol::eliminarProceso(pnodoAbb nodo, int prioridad) {
-    // Caso base: si el nodo es nulo, no hay nada que eliminar
+
+pnodoAbb Arbol::eliminarProceso(pnodoAbb nodo, int prioridad, Proceso& eliminado) {
     if (!nodo) return nodo;
 
-    // Recorrer el árbol para encontrar el nodo a eliminar
+    // Buscar el nodo a eliminar
     if (prioridad < nodo->dato.getPrioridad()) {
-        nodo->izq = eliminarProceso(nodo->izq, prioridad);
+        nodo->izq = eliminarProceso(nodo->izq, prioridad, eliminado);
     } else if (prioridad > nodo->dato.getPrioridad()) {
-        nodo->der = eliminarProceso(nodo->der, prioridad);
+        nodo->der = eliminarProceso(nodo->der, prioridad, eliminado);
     } else {
-        // Nodo encontrado, caso de eliminación
-		/*
-			// Insertar el proceso eliminado en la lista correspondiente
-        if (nodo->dato.getTipo()) { // Proceso de tiempo real
-            listaTiempoReal.insertarOrdenado(nodo->dato);
-        } else { // Proceso normal
-            listaNormal.insertarOrdenado(nodo->dato);
-        }
-*/
-        // Caso 1: Nodo con un solo hijo o sin hijos
+        // Nodo encontrado
+        eliminado = nodo->dato; // Guardamos el proceso eliminado
+
+        // Nodo con un solo hijo o sin hijos
         if (!nodo->izq) {
             pnodoAbb temp = nodo->der;
             delete nodo;
@@ -295,14 +297,14 @@ pnodoAbb Arbol::eliminarProceso(pnodoAbb nodo, int prioridad) {
             return temp;
         }
 
-        // Caso 2: Nodo con dos hijos, buscar el sucesor en el subárbol derecho
+        // Nodo con dos hijos
         pnodoAbb minNode = encontrarMin(nodo->der);
-        nodo->dato = minNode->dato; // Copiar el valor del sucesor al nodo actual
-        nodo->der = eliminarProceso(nodo->der, minNode->dato.getPrioridad());
+        nodo->dato = minNode->dato;
+        nodo->der = eliminarProceso(nodo->der, minNode->dato.getPrioridad(), eliminado);
     }
-
     return nodo;
 }
+
 
 pnodoAbb Arbol::encontrarMin(pnodoAbb nodo) {
     while (nodo && nodo->izq) {

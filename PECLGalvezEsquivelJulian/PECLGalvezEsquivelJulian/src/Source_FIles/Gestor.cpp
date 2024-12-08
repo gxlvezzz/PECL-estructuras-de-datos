@@ -363,14 +363,12 @@ void Gestor::mostrarProcesosNodosHojas() {
 void Gestor::eliminarProcesoArbolPorPrioridad() {
     int prioridad;
 
-    // Pedir al usuario que ingrese la prioridad del proceso a eliminar
     cout << "Indica la prioridad del proceso que quieres eliminar: ";
     cin >> prioridad;
 
-    // Llamada a la función de la clase Arbol para eliminar el proceso por su prioridad
-    arbol.eliminarProcesoPorPrioridad(prioridad);
-
+    arbol.eliminarProcesoPorPrioridad(prioridad, listaNormal, listaTiempoReal);
 }
+
 
 Gestor::Gestor(){
 		
